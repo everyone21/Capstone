@@ -43,37 +43,49 @@ class SignUpPage : AppCompatActivity() {
         val pass: EditText = findViewById(R.id.password)
         val confirmPass: EditText = findViewById(R.id.confirm_pass)
 
+
+        val Email = email.text.toString()
+        val Password = pass.text.toString()
+        val Confirm = confirmPass.text.toString()
+
         if (email.text.isEmpty() or pass.text.isEmpty()){
 
             Toast.makeText(this, "Please Fill All the Fields", Toast.LENGTH_SHORT).show()
             return
         }
+        else if(Password == Confirm) {
+
+            auth.createUserWithEmailAndPassword(Email, Password)
+                .addOnCompleteListener(this) { task ->
+                    if (task.isSuccessful) {
+                        // Sign in success, To MainActivity
+                        val main = Intent(this, MainActivity::class.java)
+                        startActivity(main)
+
+                        Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show()
 
 
+                    } else {
+                        Toast.makeText(
+                            baseContext, "Authentication failed.", Toast.LENGTH_SHORT,
+                        ).show()
 
-        val Email = email.text.toString()
-        val Password = pass.text.toString()
-
-        auth.createUserWithEmailAndPassword(Email, Password)
-            .addOnCompleteListener(this) { task ->
-                if (task.isSuccessful) {
-                    // Sign in success, To MainActivity
-                    val main = Intent(this, MainActivity::class.java)
-                    startActivity(main)
-
-                    Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show()
-
-
-                } else {
-                    Toast.makeText(baseContext, "Authentication failed.", Toast.LENGTH_SHORT,
+                    }
+                }
+                .addOnFailureListener {
+                    Toast.makeText(
+                        this,
+                        "An Error Occured ${it.localizedMessage}",
+                        Toast.LENGTH_SHORT
                     ).show()
 
                 }
-            }
-            .addOnFailureListener {
-                Toast.makeText(this, "An Error Occured ${it.localizedMessage}", Toast.LENGTH_SHORT).show()
+        }
 
-            }
+        else{
+            Toast.makeText(this, "Password and Confirm-Password Does not match", Toast.LENGTH_SHORT).show()
+
+        }
 
     }
 
