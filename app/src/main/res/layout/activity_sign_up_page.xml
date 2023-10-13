@@ -5,18 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SignUpPage"
-    android:background="#B3B3B3">
+    android:background="#004225">
 
 
     <EditText
-        android:id="@+id/username2"
-        android:layout_width="235dp"
-        android:layout_height="46dp"
+        android:id="@+id/cellnum"
+        android:layout_width="280dp"
+        android:layout_height="50dp"
         android:background="@drawable/border"
         android:ems="10"
         android:fontFamily="sans-serif-black"
         android:hint="Phone Number"
-        android:inputType="text"
+        android:inputType="number"
         android:textAlignment="center"
         android:textColor="#070707"
         android:textColorHint="#FFFFFF"
@@ -30,8 +30,8 @@
 
     <EditText
         android:id="@+id/username"
-        android:layout_width="235dp"
-        android:layout_height="46dp"
+        android:layout_width="280dp"
+        android:layout_height="50dp"
         android:background="@drawable/border"
         android:ems="10"
         android:fontFamily="sans-serif-black"
@@ -49,13 +49,12 @@
 
     <EditText
         android:id="@+id/email"
-        android:layout_width="234dp"
-        android:layout_height="43dp"
+        android:layout_width="280dp"
+        android:layout_height="50dp"
         android:background="@drawable/border"
         android:ems="10"
         android:fontFamily="sans-serif-black"
         android:hint="Email"
-        android:inputType="text"
         android:textAlignment="center"
         android:textColor="#070707"
         android:textColorHint="#FFFFFF"
@@ -69,8 +68,8 @@
 
     <EditText
         android:id="@+id/password"
-        android:layout_width="233dp"
-        android:layout_height="43dp"
+        android:layout_width="280dp"
+        android:layout_height="50dp"
         android:background="@drawable/border"
         android:ems="10"
         android:fontFamily="sans-serif-black"
@@ -94,8 +93,8 @@
         android:background="@drawable/bttndesign"
         android:fontFamily="sans-serif-black"
         android:text="Create Account"
-        android:textColor="#FFFFFF"
-        android:textSize="18dp"
+        android:textColor="#E8232323"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -105,8 +104,8 @@
 
     <EditText
         android:id="@+id/confirm_pass"
-        android:layout_width="233dp"
-        android:layout_height="43dp"
+        android:layout_width="280dp"
+        android:layout_height="50dp"
         android:background="@drawable/border"
         android:ems="10"
         android:fontFamily="sans-serif-black"
@@ -124,7 +123,7 @@
         app:layout_constraintVertical_bias="0.232" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/backbttn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
