@@ -9,6 +9,26 @@
 
 
     <EditText
+        android:id="@+id/username2"
+        android:layout_width="235dp"
+        android:layout_height="46dp"
+        android:background="@drawable/border"
+        android:ems="10"
+        android:fontFamily="sans-serif-black"
+        android:hint="Phone Number"
+        android:inputType="text"
+        android:textAlignment="center"
+        android:textColor="#070707"
+        android:textColorHint="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/username"
+        app:layout_constraintVertical_bias="0.485" />
+
+    <EditText
         android:id="@+id/username"
         android:layout_width="235dp"
         android:layout_height="46dp"
@@ -18,15 +38,14 @@
         android:hint="Username"
         android:inputType="text"
         android:textAlignment="center"
-        android:textColor="#FFFFFF"
+        android:textColor="#070707"
         android:textColorHint="#FFFFFF"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/submit"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/email"
-        app:layout_constraintVertical_bias="0.155" />
+        app:layout_constraintVertical_bias="0.104" />
 
     <EditText
         android:id="@+id/email"
@@ -38,7 +57,7 @@
         android:hint="Email"
         android:inputType="text"
         android:textAlignment="center"
-        android:textColor="#FFFFFF"
+        android:textColor="#070707"
         android:textColorHint="#FFFFFF"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/submit"
@@ -58,24 +77,25 @@
         android:hint="Password"
         android:inputType="textPassword"
         android:textAlignment="center"
-        android:textColor="#FFFFFF"
+        android:textColor="#070707"
         android:textColorHint="#FFFFFF"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/submit"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/username"
-        app:layout_constraintVertical_bias="0.206" />
+        app:layout_constraintVertical_bias="0.37" />
 
     <Button
         android:id="@+id/submit"
-        android:layout_width="150dp"
-        android:layout_height="54dp"
-        android:background="@drawable/button"
+        android:layout_width="190dp"
+        android:layout_height="60dp"
+        android:background="@drawable/bttndesign"
         android:fontFamily="sans-serif-black"
         android:text="Create Account"
         android:textColor="#FFFFFF"
+        android:textSize="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -93,15 +113,15 @@
         android:hint="Confirm Password"
         android:inputType="textPassword"
         android:textAlignment="center"
-        android:textColor="#FFFFFF"
+        android:textColor="#070707"
         android:textColorHint="#FFFFFF"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/submit"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password"
-        app:layout_constraintVertical_bias="0.314" />
+        app:layout_constraintVertical_bias="0.232" />
 
     <Button
         android:id="@+id/button2"
