@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Capstone"
         tools:targetApi="31">
+
         <activity
             android:name=".Profile"
             android:exported="false" />
@@ -21,9 +22,7 @@
         <activity
             android:name=".Report"
             android:exported="false" />
-        <activity
-            android:name=".ActivityCalendar"
-            android:exported="false" />
+
         <activity
             android:name=".SignUpPage"
             android:exported="false" />
