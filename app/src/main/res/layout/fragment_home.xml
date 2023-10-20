@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".Home"
     android:fillViewport="true"
-    android:background="@color/white">
+    android:background="#F0F0F0">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -29,25 +29,19 @@
             android:orientation="vertical">
 
 
-            <androidx.cardview.widget.CardView
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginHorizontal="8sp"
-                android:layout_marginVertical="8sp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/montserrat_black"
-                    android:text="Feedbacks"
-                    android:textAlignment="center"
-                    android:textColor="@color/black"
-                    android:textSize="30sp"
-                    android:textStyle="bold" />
+                android:fontFamily="@font/montserrat_black"
+                android:text="Feedbacks"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:layout_gravity="center"/>
 
 
-            </androidx.cardview.widget.CardView>
+
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
@@ -70,7 +64,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
-                    android:layout_marginRight="11sp"
+                    android:layout_marginEnd="11sp"
+                    android:layout_marginTop="11sp"
                     android:fontFamily="sans-serif"
                     android:text="DATE"
                     android:textColor="@color/black"
@@ -100,7 +95,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
-                    android:layout_marginRight="11sp"
+                    android:layout_marginEnd="11sp"
+                    android:layout_marginTop="11sp"
                     android:fontFamily="sans-serif"
                     android:text="DATE"
                     android:textColor="@color/black"
@@ -130,7 +126,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
-                    android:layout_marginRight="11sp"
+                    android:layout_marginEnd="11sp"
+                    android:layout_marginTop="11sp"
                     android:fontFamily="sans-serif"
                     android:text="DATE"
                     android:textColor="@color/black"
@@ -160,7 +157,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
-                    android:layout_marginRight="11sp"
+                    android:layout_marginEnd="11sp"
                     android:layout_marginTop="11sp"
                     android:fontFamily="sans-serif"
                     android:text="DATE"
@@ -191,7 +188,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
-                    android:layout_marginRight="11sp"
+                    android:layout_marginEnd="11sp"
                     android:layout_marginTop="11sp"
                     android:fontFamily="sans-serif"
                     android:text="HART HART"

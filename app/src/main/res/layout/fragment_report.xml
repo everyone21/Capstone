@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:paddingHorizontal="16dp"
     tools:context=".Report"
-    android:background="@color/white">
+    android:background="#F0F0F0">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -42,7 +42,7 @@
         android:layout_height="70dp"
         android:text="Upload Image"
         android:background="@drawable/bttndesign"
-
+        android:fontFamily="@font/montserrat_black"
         />
 </LinearLayout>
 

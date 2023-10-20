@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".Calendar"
     android:fillViewport="true"
-    android:background="@color/white">
+    android:background="#F0F0F0">
 
     <ScrollView
         android:layout_width="match_parent"

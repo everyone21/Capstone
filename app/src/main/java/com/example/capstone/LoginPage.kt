@@ -51,7 +51,14 @@ class LoginPage : AppCompatActivity() {
 
         auth.signInWithEmailAndPassword(login_email, login_pass)
             .addOnCompleteListener(this) { task ->
-                if (task.isSuccessful) {
+                if (login_email.equals("admin@email.com")){
+                    val admin = Intent(this, Admin_Page::class.java)
+                    startActivity(admin)
+
+                    Toast.makeText(this, "Welcome Admin", Toast.LENGTH_SHORT).show()
+
+                }
+                else if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
                     val main = Intent(this, MainActivity::class.java)
                     startActivity(main)
