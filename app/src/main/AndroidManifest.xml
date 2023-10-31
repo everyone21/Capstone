@@ -13,6 +13,12 @@
         android:theme="@style/Theme.Capstone"
         tools:targetApi="31">
         <activity
+            android:name=".ReportDetails"
+            android:exported="false" />
+        <activity
+            android:name=".UserReport"
+            android:exported="false" />
+        <activity
             android:name=".Profile"
             android:exported="false" />
         <activity
@@ -37,7 +43,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".navigation"
             android:exported="false" />
 
         <meta-data
