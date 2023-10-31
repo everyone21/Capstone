@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Inbox"
-    android:background="#004225">
+    android:background="#F0F0F0">
 
     <TextView
         android:id="@+id/textView2"
@@ -13,6 +13,7 @@
         android:layout_gravity="center"
         android:fontFamily="sans-serif-black"
         android:text="Inbox"
-        android:textSize="80dp" />
+        android:textSize="80dp"
+        android:textColor="@color/black"/>
 
 </FrameLayout>
