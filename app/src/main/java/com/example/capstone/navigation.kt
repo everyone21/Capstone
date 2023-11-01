@@ -1,13 +1,13 @@
 package com.example.capstone
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuInflater
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.capstone.databinding.ActivityMainBinding
 import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
-import android.view.MenuInflater
 
 class navigation : AppCompatActivity() {
 
@@ -21,17 +21,53 @@ class navigation : AppCompatActivity() {
 
         val user = FirebaseAuth.getInstance().currentUser
         val bottomNavigationView = binding.bottomNavigationView
-
-        if (user?.email == LoginPage.ADMIN_EMAIL) {
-            // Admin user, load admin layout
-            val menuInflater = MenuInflater(this)
-            menuInflater.inflate(R.menu.adminmenu, bottomNavigationView.menu)
-        } else {
-            // Regular user, load regular layout
-            bottomNavigationView.inflateMenu(R.menu.menu_tab)
-        }
         replace(Home())
-
+//        if (user?.email == LoginPage.ADMIN_EMAIL) {
+//            binding.bottomNavigationView.setOnItemSelectedListener {
+//
+//                when(it.itemId){
+//                    R.id.home -> replace(Home())
+//                    R.id.calendar -> replace(Calendar())
+//                    R.id.navigation_read_report -> replace(AdminCheck())
+//                    R.id.inbox -> replace(Inbox())
+//                    R.id.profile -> replace(Profile())
+//
+//                    else ->{
+//
+//                    }
+//                }
+//                true
+//            }
+//        } else {
+//            // Regular user, load regular layout
+//            binding.bottomNavigationView.setOnItemSelectedListener {
+//
+//                when (it.itemId) {
+//                    R.id.home -> replace(Home())
+//                    R.id.calendar -> replace(Calendar())
+//                    R.id.upload -> {
+//                        val launch = Intent(this, UserReport::class.java)
+//                        startActivity(launch)
+//                    }
+//
+//                    R.id.inbox -> replace(Inbox())
+//                    R.id.profile -> replace(Profile())
+//
+//                    else -> {
+//
+//                    }
+//                }
+//                true
+//            }
+//        }
+        if (user?.email == LoginPage.ADMIN_EMAIL) {
+    // Admin user, load admin layout
+            val menuInflater = MenuInflater(this)
+    menuInflater.inflate(R.menu.adminmenu, bottomNavigationView.menu)
+        } else {
+    // Regular user, load regular layout
+            bottomNavigationView.inflateMenu(R.menu.menu_tab)
+}
 
 
         binding.bottomNavigationView.setOnItemSelectedListener {
@@ -66,3 +102,11 @@ class navigation : AppCompatActivity() {
 
 }
 
+//if (user?.email == LoginPage.ADMIN_EMAIL) {
+//    // Admin user, load admin layout
+//    val menuInflater = MenuInflater(this)
+//    menuInflater.inflate(R.menu.adminmenu, bottomNavigationView.menu)
+//} else {
+//    // Regular user, load regular layout
+//    bottomNavigationView.inflateMenu(R.menu.menu_tab)
+//}

@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Capstone"
         tools:targetApi="31">
         <activity
+            android:name=".AdminTestLang"
+            android:exported="false" />
+        <activity
             android:name=".ReportDetails"
             android:exported="false" />
         <activity

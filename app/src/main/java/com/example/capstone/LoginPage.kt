@@ -1,12 +1,12 @@
 package com.example.capstone
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -55,9 +55,17 @@ class LoginPage : AppCompatActivity() {
         auth.signInWithEmailAndPassword(login_email, login_pass)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                        // This is a regular user
+                    val user = auth.currentUser
+                    if (user?.email == ADMIN_EMAIL){
                         val intent = Intent(this, navigation::class.java)
                         startActivity(intent)
+                        Toast.makeText(this, "Welcome Admin", Toast.LENGTH_SHORT).show()
+                    }else {
+                        val intent = Intent(this, navigation::class.java)
+                        startActivity(intent)
+                        Toast.makeText(this, "Welcome User", Toast.LENGTH_SHORT).show()
+                        }
+
 
                 } else {
                     // If sign in fails, display a message to the user.

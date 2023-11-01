@@ -22,7 +22,7 @@
         android:layout_height="54dp"
         android:layout_alignParentBottom="true"
         android:background="@drawable/transpa_backrount"
-        app:menu="@menu/menu_tab"
+        app:menu="@menu/placeholder"
         android:layout_marginEnd="10dp"
         android:layout_marginStart="10dp"
         android:layout_marginBottom="15dp"
