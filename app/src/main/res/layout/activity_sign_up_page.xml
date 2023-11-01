@@ -35,7 +35,7 @@
         android:background="@drawable/border"
         android:ems="10"
         android:fontFamily="sans-serif-black"
-        android:hint="Username"
+        android:hint="Name"
         android:inputType="text"
         android:textAlignment="center"
         android:textColor="#FBF8F8"

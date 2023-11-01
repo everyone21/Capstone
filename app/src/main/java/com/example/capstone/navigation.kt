@@ -22,44 +22,7 @@ class navigation : AppCompatActivity() {
         val user = FirebaseAuth.getInstance().currentUser
         val bottomNavigationView = binding.bottomNavigationView
         replace(Home())
-//        if (user?.email == LoginPage.ADMIN_EMAIL) {
-//            binding.bottomNavigationView.setOnItemSelectedListener {
-//
-//                when(it.itemId){
-//                    R.id.home -> replace(Home())
-//                    R.id.calendar -> replace(Calendar())
-//                    R.id.navigation_read_report -> replace(AdminCheck())
-//                    R.id.inbox -> replace(Inbox())
-//                    R.id.profile -> replace(Profile())
-//
-//                    else ->{
-//
-//                    }
-//                }
-//                true
-//            }
-//        } else {
-//            // Regular user, load regular layout
-//            binding.bottomNavigationView.setOnItemSelectedListener {
-//
-//                when (it.itemId) {
-//                    R.id.home -> replace(Home())
-//                    R.id.calendar -> replace(Calendar())
-//                    R.id.upload -> {
-//                        val launch = Intent(this, UserReport::class.java)
-//                        startActivity(launch)
-//                    }
-//
-//                    R.id.inbox -> replace(Inbox())
-//                    R.id.profile -> replace(Profile())
-//
-//                    else -> {
-//
-//                    }
-//                }
-//                true
-//            }
-//        }
+
         if (user?.email == LoginPage.ADMIN_EMAIL) {
     // Admin user, load admin layout
             val menuInflater = MenuInflater(this)

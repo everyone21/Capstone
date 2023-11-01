@@ -14,6 +14,8 @@ import com.google.firebase.ktx.Firebase
 class LoginPage : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
+
+
     companion object {
         const val ADMIN_EMAIL = "admin@email.com"
     }
@@ -79,5 +81,6 @@ class LoginPage : AppCompatActivity() {
 
 
     }
+
 
 }
