@@ -17,7 +17,7 @@ class SignUpPage : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     private lateinit var df: DocumentReference
     private lateinit var fStore: FirebaseFirestore
-
+    private var valid: Boolean = false
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -60,8 +60,14 @@ class SignUpPage : AppCompatActivity() {
         if (email.text.isEmpty() or pass.text.isEmpty() or Uname.text.isEmpty() or phone_num.text.isEmpty()){
 
             Toast.makeText(this, "Please Fill All the Fields", Toast.LENGTH_SHORT).show()
+            checkFields(Uname)
+            checkFields(email)
+            checkFields(phone_num)
+            checkFields(pass)
+            checkFields(confirmPass)
             return
         }
+
         else if(Password == Confirm) {
             auth.createUserWithEmailAndPassword(Email, Password)
                 .addOnCompleteListener(this) { task ->
@@ -112,7 +118,17 @@ class SignUpPage : AppCompatActivity() {
         }
 
     }
+    private fun checkFields(text: EditText){
+        valid = if(text.text.isEmpty()){
+            text.setError("Empty Field")
+            Toast.makeText(this, "Please Fill All The Fields", Toast.LENGTH_SHORT).show()
+            false
+        }else{
+            true
 
+        }
+
+    }
 
 
 }

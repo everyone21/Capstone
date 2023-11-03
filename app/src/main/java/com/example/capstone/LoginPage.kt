@@ -1,27 +1,35 @@
 package com.example.capstone
 
+import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.gms.tasks.OnSuccessListener
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.firestore.DocumentReference
+import com.google.firebase.firestore.DocumentSnapshot
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 
 class LoginPage : AppCompatActivity() {
 
-    private lateinit var auth: FirebaseAuth
-
+    private lateinit var fAuth: FirebaseAuth
+    private lateinit var df: DocumentReference
+    private lateinit var fStore: FirebaseFirestore
 
     companion object {
         const val ADMIN_EMAIL = "admin@email.com"
     }
     override fun onCreate(savedInstanceState: Bundle?) {
 
-        auth = Firebase.auth
+        fAuth = Firebase.auth
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login_page)
@@ -54,10 +62,10 @@ class LoginPage : AppCompatActivity() {
         val login_email = Uname.text.toString()
         val login_pass = Pswrd.text.toString()
 
-        auth.signInWithEmailAndPassword(login_email, login_pass)
+        fAuth.signInWithEmailAndPassword(login_email, login_pass)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    val user = auth.currentUser
+                    val user = fAuth.currentUser
                     if (user?.email == ADMIN_EMAIL){
                         val intent = Intent(this, navigation::class.java)
                         startActivity(intent)
@@ -81,6 +89,7 @@ class LoginPage : AppCompatActivity() {
 
 
     }
+
 
 
 }
