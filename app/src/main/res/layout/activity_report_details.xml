@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".ReportDetails"
-    android:background="#333333">
+    android:background="#7a7878">
 
     <Button
         android:id="@+id/backBtn"

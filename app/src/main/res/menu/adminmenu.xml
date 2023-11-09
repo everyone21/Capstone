@@ -6,7 +6,7 @@
         android:title="home"/>
 
     <item
-        android:id="@+id/calendar"
+        android:id="@+id/admincalendar"
         android:icon="@drawable/baseline_calendar_month_24"
         android:title="calendar"/>
 

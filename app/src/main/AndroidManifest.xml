@@ -13,10 +13,16 @@
         android:theme="@style/Theme.Capstone"
         tools:targetApi="31">
         <activity
-            android:name=".ReportAdapter"
+            android:name=".calendarEdit"
             android:exported="false" />
         <activity
-            android:name=".AdminTestLang"
+            android:name=".calendarAdd"
+            android:exported="false" />
+        <activity
+            android:name=".AdminCalendarUpdate"
+            android:exported="false" />
+        <activity
+            android:name=".ReportAdapter"
             android:exported="false" />
         <activity
             android:name=".ReportDetails"
@@ -29,12 +35,6 @@
             android:exported="false" />
         <activity
             android:name=".Inbox"
-            android:exported="false" />
-        <activity
-            android:name=".Report"
-            android:exported="false" />
-        <activity
-            android:name=".ActivityCalendar"
             android:exported="false" />
         <activity
             android:name=".SignUpPage"

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#333333"
+    android:background="#f0f0f0"
     android:orientation="vertical"
     tools:context=".UserReport">
 
@@ -21,7 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="topic"
-        android:textColor="#ffffff"
+        android:textColor="#000000"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="10dp"
         android:textSize="25sp" />
@@ -34,7 +34,7 @@
         android:inputType="text"
         android:paddingLeft="10dp"
         android:layout_gravity="center_horizontal"
-        android:textColor="#ffffff"
+        android:textColor="#000000"
         android:layout_marginTop="5dp"
         android:textSize="25sp" />
 
@@ -43,7 +43,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="description"
-        android:textColor="#ffffff"
+        android:textColor="#000000"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="20dp"
         android:textSize="25sp" />
@@ -58,7 +58,7 @@
         android:lines="8"
         android:gravity="top|start"
         android:layout_gravity="center_horizontal"
-        android:textColor="#ffffff"
+        android:textColor="#000000"
         android:layout_marginTop="5dp"
         android:textSize="25sp" />
 
@@ -67,7 +67,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="upload_media"
-        android:textColor="#ffffff"
+        android:textColor="#000000"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="20dp"
         android:textSize="25sp" />

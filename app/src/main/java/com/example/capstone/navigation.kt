@@ -38,10 +38,13 @@ class navigation : AppCompatActivity() {
             when(it.itemId){
                 R.id.home -> replace(Home())
                 R.id.calendar -> replace(Calendar())
+                R.id.admincalendar -> {val launch = Intent(this, AdminCalendarUpdate::class.java)
+                    startActivity(launch)}
                 R.id.upload -> {val launch = Intent(this, UserReport::class.java)
                     startActivity(launch)}
                 R.id.navigation_read_report -> replace(AdminCheck())
                 R.id.inbox -> replace(Inbox())
+                R.id.message -> replace(user_send_message())
                 R.id.profile -> replace(Profile())
 
                 else ->{

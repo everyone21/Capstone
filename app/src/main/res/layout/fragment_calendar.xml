@@ -8,11 +8,11 @@
     android:fillViewport="true"
     android:background="#F0F0F0">
 
-    <ScrollView
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:overScrollMode="never"
-        android:scrollbars="vertical"
+        android:layout_height="50dp"
+        android:background="#113e21"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -20,212 +20,36 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
 
-
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="5sp"
-            android:layout_marginVertical="5sp"
-            android:orientation="vertical">
+            android:text="Calendar of Events"
+            android:fontFamily="@font/montserrat_black"
+            android:textSize="25sp"
+            android:layout_gravity="center"
+            android:textColor="@color/white"/>
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="8sp"
-                android:layout_marginVertical="8sp">
+    </androidx.appcompat.widget.Toolbar>
 
-                <CalendarView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+    <CalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar2"
+        app:layout_constraintVertical_bias="0.0"
+        />
 
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginHorizontal="8sp"
-                android:layout_marginVertical="8sp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/montserrat_black"
-                    android:text="Calendar of Activities"
-                    android:textAlignment="center"
-                    android:textColor="@color/black"
-                    android:textSize="25sp"
-                    android:textStyle="bold" />
-
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="170sp"
-                android:layout_gravity="center"
-                android:layout_marginHorizontal="8sp"
-                android:layout_marginVertical="8sp">
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:fontFamily="@font/montserrat_black"
-                    android:text="LIBRENG KUGIT"
-                    android:textAlignment="center"
-                    android:textColor="@color/black"
-                    android:textSize="25sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="end"
-                    android:layout_marginRight="11sp"
-                    android:fontFamily="@font/montserrat_black"
-                    android:text="DATE"
-                    android:textColor="@color/black"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="170sp"
-                android:layout_gravity="center"
-                android:layout_marginHorizontal="8sp"
-                android:layout_marginVertical="8sp">
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:fontFamily="@font/montserrat_black"
-                    android:text="Hugas Itlog program"
-                    android:textAlignment="center"
-                    android:textColor="@color/black"
-                    android:textSize="25sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="end"
-                    android:layout_marginRight="11sp"
-                    android:fontFamily="@font/montserrat_black"
-                    android:text="DATE"
-                    android:textColor="@color/black"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="170sp"
-                android:layout_gravity="center"
-                android:layout_marginHorizontal="8sp"
-                android:layout_marginVertical="8sp">
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:fontFamily="@font/montserrat_black"
-                    android:text="Palaro ni Kagawad"
-                    android:textAlignment="center"
-                    android:textColor="@color/black"
-                    android:textSize="25sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="end"
-                    android:layout_marginRight="11sp"
-                    android:fontFamily="@font/montserrat_black"
-                    android:text="DATE"
-                    android:textColor="@color/black"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="170sp"
-                android:layout_gravity="center"
-                android:layout_marginHorizontal="8sp"
-                android:layout_marginVertical="8sp">
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:fontFamily="@font/montserrat_black"
-                    android:text="Bote landok"
-                    android:textAlignment="center"
-                    android:textColor="@color/black"
-                    android:textSize="25sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="end"
-                    android:layout_marginRight="11sp"
-                    android:layout_marginTop="11sp"
-                    android:fontFamily="@font/montserrat_black"
-                    android:text="DATE"
-                    android:textColor="@color/black"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="170sp"
-                android:layout_gravity="center"
-                android:layout_marginHorizontal="8sp"
-                android:layout_marginVertical="8sp">
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:fontFamily="@font/montserrat_black"
-                    android:text="HI CRUSH"
-                    android:textAlignment="center"
-                    android:textColor="@color/black"
-                    android:textSize="25sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="end"
-                    android:layout_marginRight="11sp"
-                    android:layout_marginTop="11sp"
-                    android:fontFamily="@font/montserrat_black"
-                    android:text="HART HART"
-                    android:textColor="@color/black"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
-
-            </androidx.cardview.widget.CardView>
-
-        </LinearLayout>
-
-
-    </ScrollView>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="409dp"
+        android:layout_height="512dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calendarView" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AdminCheck">
+    tools:context=".AdminCheck"
+    android:background="#7a7878">
 
     <ListView
         android:id="@+id/reportsListView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:divider="#595757"
-        android:dividerHeight="4dp"/>
+        android:divider="#F44848"
+        android:dividerHeight="2dp"/>
 
 </androidx.appcompat.widget.LinearLayoutCompat>
