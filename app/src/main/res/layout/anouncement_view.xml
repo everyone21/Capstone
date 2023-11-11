@@ -29,8 +29,9 @@
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="title"
+            android:fontFamily="@font/adamina"
             android:textSize="20sp"
-            android:textColor="#ffffff"
+            android:textColor="#000000"
             android:maxLines="1"
             android:ellipsize="end" />
 
@@ -39,8 +40,9 @@
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:text="date"
+            android:fontFamily="@font/adamina"
             android:textSize="15sp"
-            android:textColor="#ffffff"
+            android:textColor="#000000"
             android:maxLines="1"
             android:ellipsize="end" />
 
@@ -51,8 +53,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="description"
+        android:fontFamily="@font/adamina"
         android:textSize="16sp"
-        android:textColor="#ffffff"
+        android:textColor="#000000"
         android:maxLines="3"
         android:ellipsize="end"
         android:layout_marginBottom="8dp" />

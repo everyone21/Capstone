@@ -20,7 +20,7 @@ class calendar : Fragment() {
 
     private lateinit var db: FirebaseFirestore
     private lateinit var recyclerView: RecyclerView
-    private lateinit var eventsArray: ArrayList<calendarAdapter.Event>
+    private lateinit var eventsArray: ArrayList<Events>
     private lateinit var calendarAdapter: calendarAdapter
 
 
@@ -34,6 +34,7 @@ class calendar : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(context)
         recyclerView.setHasFixedSize(true)
         eventsArray = arrayListOf()
+        calendarAdapter = calendarAdapter(eventsArray)
         recyclerView.adapter = calendarAdapter
 
         EventChangeListener()
@@ -59,7 +60,7 @@ class calendar : Fragment() {
 
                         for (dc:DocumentChange in value?.documentChanges!!){
                             if (dc.type == DocumentChange.Type.ADDED){
-                                eventsArray.add(dc.document.toObject(calendarAdapter.Event::class.java))
+                                eventsArray.add(dc.document.toObject(Events::class.java))
 
                             }
                         }

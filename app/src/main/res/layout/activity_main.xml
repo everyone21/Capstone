@@ -19,16 +19,11 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
-        android:layout_height="54dp"
+        android:layout_height="70dp"
         android:layout_alignParentBottom="true"
         android:background="@drawable/transpa_backrount"
         app:menu="@menu/placeholder"
-        android:layout_marginEnd="2dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginBottom="2dp"
-        android:layout_marginTop="2dp"
-        app:itemIconSize="40sp"
-        />
+        app:itemIconSize="35sp" />
 
 
 

@@ -26,6 +26,7 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:textColor="#ffffff"
+            android:fontFamily="@font/adamina"
             android:layout_height="wrap_content"
             android:text="report_title"
             android:textSize="20sp"
@@ -36,6 +37,7 @@
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:text="date"
+            android:fontFamily="@font/adamina"
             android:textColor="#ffffff"
             android:textSize="15sp"
             android:padding="8dp" />
@@ -47,6 +49,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="8dp"
+        android:fontFamily="@font/adamina"
         android:textColor="#ffffff"
         android:text="report_description"
         android:textSize="16sp" />
@@ -72,7 +75,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Accept"
-            android:fontFamily="@font/montserrat_black"
+            android:fontFamily="@font/adamina"
             android:textColor="#FFFFFF"
             android:background="#00A300"
             android:layout_margin="5dp"/>
@@ -84,7 +87,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Reject"
-            android:fontFamily="@font/montserrat_black"
+            android:fontFamily="@font/adamina"
             android:textColor="#FFFFFF"
             android:background="#FF0000"
             android:layout_margin="5dp"/>
