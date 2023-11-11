@@ -8,27 +8,6 @@
     android:background="#f0f0f0">
 
 
-<!--    <LinearLayout-->
-<!--        android:id="@+id/search_layout"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_above="@+id/container"-->
-<!--        android:layout_alignParentStart="true"-->
-<!--        android:layout_alignParentTop="true"-->
-<!--        android:background="#f0f0f0">-->
-
-<!--        <androidx.appcompat.widget.SearchView-->
-<!--            android:id="@+id/search"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:layout_marginStart="20dp"-->
-<!--            android:layout_marginTop="8dp"-->
-<!--            android:layout_marginEnd="20dp"-->
-<!--            android:layout_marginBottom="8dp"-->
-<!--            android:background="@drawable/radius"-->
-<!--            app:iconifiedByDefault="true" />-->
-<!--    </LinearLayout>-->
-
     <FrameLayout
         android:id="@+id/container"
         android:layout_width="match_parent"

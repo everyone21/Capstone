@@ -37,9 +37,10 @@ class navigation : AppCompatActivity() {
 
             when(it.itemId){
                 R.id.home -> replace(Home())
-                R.id.calendar -> replace(Calendar())
-                R.id.admincalendar -> {val launch = Intent(this, AdminCalendarUpdate::class.java)
-                    startActivity(launch)}
+                R.id.calendar -> replace(calendar())
+//                R.id.admincalendar -> {val launch = Intent(this, AdminCalendarUpdate::class.java)
+//                    startActivity(launch)}
+                R.id.admincalendar -> replace(AdminCalendarView())
                 R.id.upload -> {val launch = Intent(this, UserReport::class.java)
                     startActivity(launch)}
                 R.id.navigation_read_report -> replace(AdminCheck())
