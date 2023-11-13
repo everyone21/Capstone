@@ -9,9 +9,25 @@ import com.bumptech.glide.Glide
 
 class calendarAdapter(private val eventsList: ArrayList<Events>) : RecyclerView.Adapter<calendarAdapter.MyViewHolder>() {
 
+//    private lateinit var mListener : onItemClickListener
+//
+//
+//    interface onItemClickListener{
+//
+//        fun onItemClick(position: Int)
+//    }
+//
+//    fun setOnItemClickListener(listener: onItemClickListener){
+//
+//        mListener = listener
+//
+//    }
+
+
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.anouncement_view, parent, false)
-        return MyViewHolder(itemView)
+        return MyViewHolder(itemView)//, mListener)
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
@@ -29,5 +45,10 @@ class calendarAdapter(private val eventsList: ArrayList<Events>) : RecyclerView.
         val Desc: TextView = itemView.findViewById(R.id.descriptionTextView)
         val Date: TextView = itemView.findViewById(R.id.dateTextView)
 
+//        init {
+//            itemView.setOnClickListener {
+//                listener.onItemClick(adapterPosition)
+//            }
+//        }
     }
 }

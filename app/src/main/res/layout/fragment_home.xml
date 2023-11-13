@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".Home"
     android:orientation="vertical"
-    android:background="#7a7878">
+    android:background="#f0f0f0">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -35,8 +35,9 @@
         android:id="@+id/recentReportsTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="recent_reports"
-        android:textColor="#ffffff"
+        android:text="Recent Reports"
+        android:textColor="#000000"
+        android:fontFamily="@font/adamina"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:textSize="25sp" />
