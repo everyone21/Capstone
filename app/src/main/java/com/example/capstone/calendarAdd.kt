@@ -48,7 +48,7 @@ class calendarAdd : AppCompatActivity() {
         df = fStore.collection("EventsAnnouncement").document()
         val events = hashMapOf(
             "eventTitle" to eventTitle,
-            "eventDescription" to description,
+            "eventPlace" to description,
             "eventDate" to date
         )
         df.set(events)

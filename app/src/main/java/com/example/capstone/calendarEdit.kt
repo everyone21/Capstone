@@ -1,6 +1,7 @@
 package com.example.capstone
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -20,6 +21,8 @@ class calendarEdit : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var eventsArray: ArrayList<Events>
     private lateinit var calendarAdapter: calendarEditAdapter
+
+
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,14 +36,13 @@ class calendarEdit : AppCompatActivity() {
 
         EventChangeListener()
 
-
     }
     private fun EventChangeListener(){
 
         db = FirebaseFirestore.getInstance()
         db.collection("EventsAnnouncement").
         addSnapshotListener(object : EventListener<QuerySnapshot> {
-//            @SuppressLint("NotifyDataSetChanged")
+            @SuppressLint("NotifyDataSetChanged")
             override fun onEvent(
                 value: QuerySnapshot?,
                 error: FirebaseFirestoreException?
@@ -51,13 +53,25 @@ class calendarEdit : AppCompatActivity() {
                     return
                 }
 
-                for (dc: DocumentChange in value?.documentChanges!!){
-                    if (dc.type == DocumentChange.Type.ADDED){
+                for (dc: DocumentChange in value?.documentChanges!!) {
+                    if (dc.type == DocumentChange.Type.ADDED) {
                         eventsArray.add(dc.document.toObject(Events::class.java))
 
                     }
+
+                    var adapter = calendarEditAdapter(eventsArray)
+                    recyclerView.adapter = adapter
+                    adapter.onItemClickListener(object : calendarEditAdapter.onItemClickListener {
+                        override fun onItemClick(position: Int) {
+                            val intent = Intent(this@calendarEdit, calendarEditActivity::class.java)
+                            intent.putExtra("title", eventsArray[position].eventTitle)
+                            intent.putExtra("date", eventsArray[position].eventDate)
+                            intent.putExtra("place", eventsArray[position].eventPlace)
+                            startActivity(intent)
+                        }
+
+                    })
                 }
-                var adapter = calendarEditAdapter(eventsArray)
                 calendarAdapter.notifyDataSetChanged()
             }
 
@@ -66,11 +80,3 @@ class calendarEdit : AppCompatActivity() {
 
     }
 }
-
-//adapter.setOnItemClickListener(object : calendarEditAdapter.onItemClickListener{
-//    override fun onItemClick(position: Int) {
-//
-//        Toast.makeText(this@calendarEdit, "You clicked this shiet no. $position", Toast.LENGTH_SHORT).show()
-//
-//    }
-//})
