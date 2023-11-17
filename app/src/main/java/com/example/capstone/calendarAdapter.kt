@@ -26,6 +26,7 @@ class calendarAdapter(private val eventsList: ArrayList<Events>) : RecyclerView.
         val Title: TextView = itemView.findViewById(R.id.titleTextView)
         val where: TextView = itemView.findViewById(R.id.where_)
         val Date: TextView = itemView.findViewById(R.id.dateTextView)
+        val time: TextView = itemView.findViewById(R.id.time)
 
 //        init {
 //            itemView.setOnClickListener {
@@ -45,6 +46,7 @@ class calendarAdapter(private val eventsList: ArrayList<Events>) : RecyclerView.
         holder.Title.text = eventsList[position].eventTitle
         holder.Date.text = eventsList[position].eventDate
         holder.where.text = eventsList[position].eventPlace
+        holder.time.text = eventsList[position].eventTime
 
 
 

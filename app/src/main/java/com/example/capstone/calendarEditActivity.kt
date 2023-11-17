@@ -14,15 +14,18 @@ class calendarEditActivity : AppCompatActivity() {
         val title: TextView = findViewById(R.id.what)
         val date: TextView = findViewById(R.id.when_)
         val desc: TextView = findViewById(R.id.where_1)
+        val time: TextView = findViewById(R.id.time)
 
         val bundle : Bundle?= intent.extras
         val titl = bundle?.getString("title")
         val dat = bundle?.getString("date")
         val descr = bundle?.getString(("place"))
+        val tim = bundle?.getString(("time"))
 
 
         title.text = titl
         date.text = dat
         desc.text = descr
+        time.text = tim
         }
 }

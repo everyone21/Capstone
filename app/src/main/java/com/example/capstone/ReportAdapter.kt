@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
-class ReportAdapter : ListAdapter<ReportAdapter.Report, ReportAdapter.ReportViewHolder>(ReportDiffCallback()) {
+class ReportAdapter(private val reportsList: ArrayList<Report>) : ListAdapter<Report, ReportAdapter.ReportViewHolder>(ReportDiffCallback()) {
 
 //    var onItemClick : ((Report) -> Unit)? = null
 
@@ -24,18 +24,27 @@ class ReportAdapter : ListAdapter<ReportAdapter.Report, ReportAdapter.ReportView
         val report = getItem(position)
         holder.bind(report)
 
-//        holder.itemView.setOnClickListener{
-//            onItemClick?.invoke(report)
-//        }
+//        holder.titleTextView.text = reportsList[position].title
+//        holder.descriptionTextView.text = reportsList[position].description
+//        holder.dateTextView.text = reportsList[position].date
+//        holder.bind(reportsList[position])
+
+
+
     }
 
-    inner class ReportViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class ReportViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val titleTextView: TextView = itemView.findViewById(R.id.titleTextView)
         private val descriptionTextView: TextView = itemView.findViewById(R.id.descriptionTextView)
         private val mediaImageView: ImageView = itemView.findViewById(R.id.mediaImageView)
         private val dateTextView: TextView = itemView.findViewById(R.id.dateTextView)
         private val readMoreTextView: TextView = itemView.findViewById(R.id.readMoreTextView)
 
+//         val titleTextView: TextView = itemView.findViewById(R.id.titleTextView)
+//         val descriptionTextView: TextView = itemView.findViewById(R.id.descriptionTextView)
+//         val mediaImageView: ImageView = itemView.findViewById(R.id.mediaImageView)
+//         val dateTextView: TextView = itemView.findViewById(R.id.dateTextView)
+//         val readMoreTextView: TextView = itemView.findViewById(R.id.readMoreTextView)
 
         fun bind(report: Report) {
             titleTextView.text = report.title
@@ -56,13 +65,13 @@ class ReportAdapter : ListAdapter<ReportAdapter.Report, ReportAdapter.ReportView
         }
     }
 
-    data class Report(
-        val id: String,
-        val title: String,
-        val description: String,
-        val mediaURL: String?,
-        val date: String
-    )
+//    data class Report(
+//        val id: String,
+//        val title: String,
+//        val description: String,
+//        val mediaURL: String?,
+//        val date: String
+//    )
 
     class ReportDiffCallback : DiffUtil.ItemCallback<Report>() {
         override fun areItemsTheSame(oldItem: Report, newItem: Report): Boolean {

@@ -1,10 +1,11 @@
-package com.example.capstone
+package com.example.capstone.UnUsed
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.capstone.R
 
 class Inbox : Fragment() {
     override fun onCreateView(

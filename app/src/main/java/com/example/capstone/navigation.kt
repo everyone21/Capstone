@@ -3,9 +3,13 @@ package com.example.capstone
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuInflater
+import android.widget.ImageButton
+import android.widget.Toolbar
 import androidx.appcompat.app.AppCompatActivity
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import com.example.capstone.databinding.ActivityMainBinding
+import com.google.android.material.navigation.NavigationView
 import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 
@@ -23,6 +27,13 @@ class navigation : AppCompatActivity() {
         val bottomNavigationView = binding.bottomNavigationView
         replace(Home())
 
+
+        val profile = findViewById<ImageButton>(R.id.profileView)
+
+        profile.setOnClickListener {
+            replace(Profile())
+        }
+
         if (user?.email == LoginPage.ADMIN_EMAIL) {
     // Admin user, load admin layout
             val menuInflater = MenuInflater(this)
@@ -30,7 +41,9 @@ class navigation : AppCompatActivity() {
         } else {
     // Regular user, load regular layout
             bottomNavigationView.inflateMenu(R.menu.menu_tab)
+
 }
+
 
 
         binding.bottomNavigationView.setOnItemSelectedListener {
@@ -44,9 +57,9 @@ class navigation : AppCompatActivity() {
                 R.id.upload -> {val launch = Intent(this, UserReport::class.java)
                     startActivity(launch)}
                 R.id.navigation_read_report -> replace(AdminCheck())
-                R.id.inbox -> replace(Inbox())
-                R.id.message -> replace(user_send_message())
-                R.id.profile -> replace(Profile())
+                R.id.menu -> replace(bottomMenuBurger())
+//                R.id.message -> replace(user_send_message())
+//                R.id.profile -> replace(Profile())
 
                 else ->{
 
@@ -67,13 +80,7 @@ class navigation : AppCompatActivity() {
 
     }
 
+
+
 }
 
-//if (user?.email == LoginPage.ADMIN_EMAIL) {
-//    // Admin user, load admin layout
-//    val menuInflater = MenuInflater(this)
-//    menuInflater.inflate(R.menu.adminmenu, bottomNavigationView.menu)
-//} else {
-//    // Regular user, load regular layout
-//    bottomNavigationView.inflateMenu(R.menu.menu_tab)
-//}

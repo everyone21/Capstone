@@ -67,6 +67,7 @@ class calendarEdit : AppCompatActivity() {
                             intent.putExtra("title", eventsArray[position].eventTitle)
                             intent.putExtra("date", eventsArray[position].eventDate)
                             intent.putExtra("place", eventsArray[position].eventPlace)
+                            intent.putExtra("time", eventsArray[position].eventTime)
                             startActivity(intent)
                         }
 

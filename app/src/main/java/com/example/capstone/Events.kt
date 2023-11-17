@@ -6,9 +6,11 @@ import android.os.Parcelable
 data class Events(
     var eventDate: String ?= null,
     var eventTitle: String ?= null,
-    var eventPlace: String ?= null
+    var eventPlace: String ?= null,
+    var eventTime: String ?= null
 ): Parcelable {
     constructor(parcel: Parcel) : this(
+        parcel.readString(),
         parcel.readString(),
         parcel.readString(),
         parcel.readString()
@@ -19,6 +21,7 @@ data class Events(
         parcel.writeString(eventDate)
         parcel.writeString(eventTitle)
         parcel.writeString(eventPlace)
+        parcel.writeString(eventTime)
     }
 
     override fun describeContents(): Int {

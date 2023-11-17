@@ -12,20 +12,6 @@ import androidx.recyclerview.widget.RecyclerView
 
 class calendarEditAdapter(private val eventsList2: ArrayList<Events>) : RecyclerView.Adapter<calendarEditAdapter.MyViewHolder2>(){
 
-//    var onItemClick : ((Events) -> Unit)? = null
-//    private lateinit var mListener : onItemClickListener
-//
-//
-//    interface onItemClickListener{
-//
-//        fun onItemClick(position: Int)
-//    }
-//
-//    fun setOnItemClickListener(listener2: onItemClickListener){
-//
-//        mListener = listener2
-//
-//    }
 
 
     private lateinit var mListener : onItemClickListener
@@ -42,6 +28,7 @@ class calendarEditAdapter(private val eventsList2: ArrayList<Events>) : Recycler
         val Title: TextView = itemView.findViewById(R.id.titleTextView)
         val where: TextView = itemView.findViewById(R.id.where_)
         val Date: TextView = itemView.findViewById(R.id.dateTextView)
+        val time: TextView = itemView.findViewById(R.id.time)
 
         init {
             itemView.setOnClickListener {
@@ -60,10 +47,8 @@ class calendarEditAdapter(private val eventsList2: ArrayList<Events>) : Recycler
         holder.Title.text = events.eventTitle
         holder.where.text = events.eventPlace
         holder.Date.text = events.eventDate
+        holder.time.text = events.eventTime
 
-//        holder.itemView.setOnClickListener{
-//            onItemClick?.invoke(events)
-//        }
     }
 
     override fun getItemCount(): Int = eventsList2.size
