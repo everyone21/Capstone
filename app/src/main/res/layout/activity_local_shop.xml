@@ -6,4 +6,27 @@
     android:layout_height="match_parent"
     tools:context=".bottomMenu.LocalShop">
 
+
+    <Button
+        android:id="@+id/postShop"
+        android:layout_width="155dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="28dp"
+        android:text="Post Shop"
+        android:background="@drawable/bttndesign"
+        android:textSize="20sp"
+        android:fontFamily="@font/adamina"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/shops"
+        android:layout_width="match_parent"
+        android:layout_height="829dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/postShop" />
 </androidx.constraintlayout.widget.ConstraintLayout>
