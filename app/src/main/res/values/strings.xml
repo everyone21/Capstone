@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">Capstone</string>
-    <!-- TODO: Remove or change this placeholder text -->
+    <string name="nav_open">Open Navigation Drawer</string>
+    <string name="nav_close">Close Navigation Drawer</string>
+
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string-array name="months">
         <item>January</item>
@@ -24,4 +27,40 @@
         <item>Certification of Indigency</item>
         <item>Certification of Good Moral</item>
     </string-array>
+
+    <string-array name="Puroks">
+        <item>Purok 1</item>
+        <item>Purok 2</item>
+        <item>Purok 3</item>
+        <item>Purok 4</item>
+        <item>Purok 5</item>
+        <item>Purok 6</item>
+        <item>Purok 7</item>
+        <item>Purok 8</item>
+        <item>Purok 9</item>
+        <item>Purok 10</item>
+        <item>Purok 11</item>
+        <item>Purok 12</item>
+        <item>Purok 13</item>
+        <item>Purok 14</item>
+        <item>Purok 15</item>
+        <item>Purok 16</item>
+        <item>Purok 17</item>
+        <item>Purok 18</item>
+        <item>Purok 19</item>
+        <item>Purok 20</item>
+        <item>Purok 21</item>
+        <item>Purok 22</item>
+        <item>Purok 23</item>
+        <item>Purok 24</item>
+        <item>Purok 25</item>
+        <item>Purok 26</item>
+        <item>Purok 27</item>
+        <item>Purok 28</item>
+        <item>Purok 29</item>
+        <item>Purok 30</item>
+        <item>Purok 31</item>
+        <item>Purok 32</item>
+    </string-array>
+
 </resources>

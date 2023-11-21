@@ -3,13 +3,9 @@ package com.example.capstone
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuInflater
-import android.widget.ImageButton
-import android.widget.Toolbar
 import androidx.appcompat.app.AppCompatActivity
-import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import com.example.capstone.databinding.ActivityMainBinding
-import com.google.android.material.navigation.NavigationView
 import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 
@@ -28,11 +24,12 @@ class navigation : AppCompatActivity() {
         replace(Home())
 
 
-        val profile = findViewById<ImageButton>(R.id.profileView)
 
-        profile.setOnClickListener {
-            replace(Profile())
-        }
+//        val profile = findViewById<ImageButton>(R.id.profileView)
+//
+//        profile.setOnClickListener {
+//            replace(Profile())
+//        }
 
         if (user?.email == LoginPage.ADMIN_EMAIL) {
     // Admin user, load admin layout
@@ -68,7 +65,9 @@ class navigation : AppCompatActivity() {
             true
         }
 
+
     }
+
 
 
     private fun replace(fragment: Fragment){
@@ -79,6 +78,7 @@ class navigation : AppCompatActivity() {
         fragmentTransaction.commit()
 
     }
+
 
 
 

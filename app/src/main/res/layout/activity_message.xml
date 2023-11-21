@@ -30,14 +30,16 @@
         android:layout_width="80dp"
         android:layout_height="45dp"
         android:layout_gravity="center"
+        android:layout_marginTop="3dp"
         android:layout_marginBottom="20dp"
-        android:background="#B745C82E"
+        android:background="@drawable/buttondesigns"
         android:text="send"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.478"
-        app:layout_constraintStart_toEndOf="@+id/editTextText" />
+        app:layout_constraintStart_toEndOf="@+id/editTextText"
+        app:layout_constraintTop_toBottomOf="@+id/messages" />
 
     <EditText
         android:id="@+id/editTextText"

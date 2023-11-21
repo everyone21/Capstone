@@ -23,11 +23,11 @@ import kotlin.collections.ArrayList
 
 
 class Home : Fragment() {
-    private lateinit var db: FirebaseFirestore
     private lateinit var recyclerView: RecyclerView
     private lateinit var reportAdapter: ReportAdapter
     private lateinit var reportsArray: ArrayList<Report>
 
+    @SuppressLint("NotifyDataSetChanged")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -79,6 +79,7 @@ class Home : Fragment() {
                             reports.add(report)
                         }
                         reportAdapter.submitList(reports)
+                        reportAdapter.notifyDataSetChanged()
                     }
                 }
             }

@@ -7,44 +7,44 @@
     tools:context=".navigation"
     android:background="#f0f0f0">
 
-<!--    <androidx.drawerlayout.widget.DrawerLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:id="@+id/drawer"-->
-<!--        android:fitsSystemWindows="true"-->
-<!--        tools:openDrawer="start">-->
+    <!--    <androidx.drawerlayout.widget.DrawerLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:id="@+id/drawer"-->
+    <!--        android:fitsSystemWindows="true"-->
+    <!--        tools:openDrawer="start">-->
 
-<!--        <LinearLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:orientation="vertical">-->
+    <!--        <LinearLayout-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="match_parent"-->
+    <!--            android:orientation="vertical">-->
 
-<!--            <androidx.appcompat.widget.Toolbar-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="56dp"-->
-<!--                android:id="@+id/toolbar"-->
-<!--                android:elevation="4dp"-->
-<!--                android:background="#2B6C08"-->
-<!--                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"-->
-<!--                app:popupTheme="@style/Theme.AppCompat.Light">-->
-<!--                -->
-<!--                -->
-<!--            </androidx.appcompat.widget.Toolbar>-->
+    <!--            <androidx.appcompat.widget.Toolbar-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="56dp"-->
+    <!--                android:id="@+id/toolbar"-->
+    <!--                android:elevation="4dp"-->
+    <!--                android:background="#2B6C08"-->
+    <!--                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"-->
+    <!--                app:popupTheme="@style/Theme.AppCompat.Light">-->
+    <!--                -->
+    <!--                -->
+    <!--            </androidx.appcompat.widget.Toolbar>-->
 
-<!--        </LinearLayout>-->
+    <!--        </LinearLayout>-->
 
-<!--        <com.google.android.material.navigation.NavigationView-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:id="@+id/nav_view"-->
-<!--            android:layout_gravity="start"-->
-<!--            app:headerLayout="@layout/nav_header"-->
-<!--            app:menu="@menu/navigation_drawer"-->
-<!--            app:itemIconTint="#8B34750B"-->
-<!--            app:itemTextColor="#447029"-->
-<!--            android:background="#ffffff"/>-->
+    <!--        <com.google.android.material.navigation.NavigationView-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="match_parent"-->
+    <!--            android:id="@+id/nav_view"-->
+    <!--            android:layout_gravity="start"-->
+    <!--            app:headerLayout="@layout/nav_header"-->
+    <!--            app:menu="@menu/navigation_drawer"-->
+    <!--            app:itemIconTint="#8B34750B"-->
+    <!--            app:itemTextColor="#447029"-->
+    <!--            android:background="#ffffff"/>-->
 
-<!--    </androidx.drawerlayout.widget.DrawerLayout>-->
+    <!--    </androidx.drawerlayout.widget.DrawerLayout>-->
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbar"
         android:layout_width="match_parent"
