@@ -1,8 +1,10 @@
 package com.example.capstone
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ImageButton
 import android.widget.TextView
 
 class calendarEditActivity : AppCompatActivity() {
@@ -10,6 +12,14 @@ class calendarEditActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_calendar_edit2)
+
+        val back: ImageButton = findViewById(R.id.back)
+
+        back.setOnClickListener{
+            val intent = Intent(this, calendarEdit::class.java)
+            startActivity(intent)
+            finish()
+        }
 
         val title: TextView = findViewById(R.id.what)
         val date: TextView = findViewById(R.id.when_)

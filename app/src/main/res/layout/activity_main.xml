@@ -110,7 +110,7 @@
         app:itemIconSize="35sp"
         app:itemTextColor="@color/black"
         app:itemRippleColor="@color/white"
-        app:itemIconTint="@color/bluish"
+        app:itemIconTint="@color/green"
         app:itemTextAppearanceActive="@color/black"/>
 
 

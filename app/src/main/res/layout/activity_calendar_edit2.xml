@@ -8,21 +8,33 @@
     android:background="#B9775236">
 
 
+    <ImageButton
+        android:id="@+id/back"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.008"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="5dp"/>
+
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="355dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="72dp"
+        android:background="@drawable/border"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="@drawable/border">
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-black"
+            android:paddingStart="10dp"
             android:text="What: "
             android:textColor="@color/black"
             android:textSize="25sp" />
@@ -33,7 +45,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-black"
             android:text="What"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="22sp" />
 
     </LinearLayout>
@@ -54,6 +66,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-black"
             android:text="Where: "
+            android:paddingStart="10dp"
             android:textColor="@color/black"
             android:textSize="25sp" />
 
@@ -63,7 +76,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-black"
             android:text="Where"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="22sp" />
 
     </LinearLayout>
@@ -84,6 +97,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-black"
             android:text="When: "
+            android:paddingStart="10dp"
             android:textColor="@color/black"
             android:textSize="25sp" />
 
@@ -107,7 +121,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-black"
             android:text="When"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="22sp" />
 
     </LinearLayout>
@@ -132,7 +146,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-black"
                 android:text="time"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="22sp" />
 
         </LinearLayout>

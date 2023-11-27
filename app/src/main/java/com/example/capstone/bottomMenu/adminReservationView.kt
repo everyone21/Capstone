@@ -1,15 +1,20 @@
 package com.example.capstone.bottomMenu
 
+import android.annotation.SuppressLint
+import android.content.Intent
 import android.icu.text.SimpleDateFormat
 import android.icu.util.Calendar
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.RequiresApi
 import com.example.capstone.R
+import com.example.capstone.bottomMenuBurger
 import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.FirebaseFirestore
 import java.util.Date
@@ -21,6 +26,7 @@ class adminReservationView : AppCompatActivity() {
     private lateinit var dateDisplay: TextView
     private lateinit var appointmentsRef: CollectionReference
 
+    @SuppressLint("MissingInflatedId")
     @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,6 +61,14 @@ class adminReservationView : AppCompatActivity() {
             displayDate(currentDate)
             updateAppointmentLimits()
         }
+
+        val back = findViewById<ImageButton>(R.id.back1)
+        back.setOnClickListener{
+            val intent = Intent(this, bottomMenuBurger::class.java)
+            startActivity(intent)
+            finish()
+        }
+
     }
 
     @RequiresApi(Build.VERSION_CODES.N)

@@ -12,7 +12,7 @@ import com.bumptech.glide.Glide
 import com.example.capstone.R
 import com.example.capstone.Report
 
-class ReportAdapter(private val reportsList: ArrayList<Report>) : ListAdapter<Report, ReportAdapter.ReportViewHolder>(
+class ReportAdapter(private val reportsList: MutableList<Report>) : ListAdapter<Report, ReportAdapter.ReportViewHolder>(
     ReportDiffCallback()
 ) {
 
