@@ -12,21 +12,26 @@
         android:layout_width="155dp"
         android:layout_height="55dp"
         android:layout_marginTop="28dp"
-        android:text="Post Shop"
         android:background="@drawable/bttndesign"
-        android:textSize="20sp"
         android:fontFamily="@font/adamina"
+        android:text="Post Shop"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/shops"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="829dp"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/postShop" />
+        app:layout_constraintTop_toBottomOf="@+id/postShop">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/shopsRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="829dp" />
+    </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

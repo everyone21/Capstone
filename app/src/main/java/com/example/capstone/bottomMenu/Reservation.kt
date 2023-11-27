@@ -1,6 +1,7 @@
 package com.example.capstone.bottomMenu
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -38,51 +39,39 @@ class Reservation : AppCompatActivity() {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinner.adapter = adapter
 
-
         purokSpinner = findViewById(R.id.purok_spinner)
         val purokAdapter = ArrayAdapter.createFromResource(this, R.array.Puroks, android.R.layout.simple_spinner_item)
         purokAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         purokSpinner.adapter = purokAdapter
-
 
         monthSpinner = findViewById(R.id.monthSpinner)
         val monthAdapter = ArrayAdapter.createFromResource(this, R.array.months, android.R.layout.simple_spinner_item)
         monthAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         monthSpinner.adapter = monthAdapter
 
-
         daySpinner = findViewById(R.id.daySpinner)
         val dayAdapter = ArrayAdapter.createFromResource(this, R.array.Day, android.R.layout.simple_spinner_item)
         dayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         daySpinner.adapter = dayAdapter
-
 
         timeSpinner = findViewById(R.id.timeSpinner)
         val timeAdapter = ArrayAdapter.createFromResource(this, R.array.time, android.R.layout.simple_spinner_item)
         timeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         timeSpinner.adapter = timeAdapter
 
-
         firstName = findViewById(R.id.firstName)
         lastName = findViewById(R.id.lastName)
-
-
-
-
-
-        //Not Working properly
-
         submit = findViewById(R.id.submit)
 
         submit.setOnClickListener {
 
             val fname = firstName.text.toString()
             val lname = lastName.text.toString()
-            val purp = spinner.onItemSelectedListener.toString()
-            val purok = purokSpinner.onItemSelectedListener.toString()
-            val month = monthSpinner.onItemSelectedListener.toString()
-            val day = daySpinner.onItemSelectedListener.toString()
-            val time = timeSpinner.onItemSelectedListener.toString()
+            val purp = spinner.selectedItem.toString()
+            val purok = purokSpinner.selectedItem.toString()
+            val month = monthSpinner.selectedItem.toString()
+            val day = daySpinner.selectedItem.toString()
+            val time = timeSpinner.selectedItem.toString()
 
             df = fStore.collection("Appointments").document()
             val appointment = hashMapOf(
@@ -97,26 +86,8 @@ class Reservation : AppCompatActivity() {
             df.set(appointment)
             Toast.makeText(this, "Submitted", Toast.LENGTH_SHORT).show()
 
+            val intent = Intent(this, ReservationList::class.java)
+            startActivity(intent)
         }
-
-//        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
-//            override fun onItemSelected(
-//                parent: AdapterView<*>?,
-//                view: View?,
-//                position: Int,
-//                id: Long
-//            ) {
-//                val selectedItem = parent?.getItemAtPosition(position).toString()
-//                Toast.makeText(this@Reservation, "You Have Appointed $selectedItem", Toast.LENGTH_SHORT).show()
-//
-//            }
-//
-//            override fun onNothingSelected(parent: AdapterView<*>?) {
-//                TODO("Not yet implemented")
-//            }
-//
-//
-//        }
-
     }
 }

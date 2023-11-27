@@ -1,22 +1,16 @@
 package com.example.capstone
 
 import android.annotation.SuppressLint
-import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.firebase.firestore.DocumentChange
-import com.google.firebase.firestore.EventListener
+import com.example.capstone.Adapters.ReportAdapter
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.FirebaseFirestoreException
 import com.google.firebase.firestore.Query
-import com.google.firebase.firestore.QuerySnapshot
-import com.google.firebase.firestore.toObject
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList

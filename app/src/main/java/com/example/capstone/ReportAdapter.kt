@@ -1,4 +1,4 @@
-package com.example.capstone
+package com.example.capstone.Adapters
 
 import android.view.LayoutInflater
 import android.view.View
@@ -9,8 +9,12 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.capstone.R
+import com.example.capstone.Report
 
-class ReportAdapter(private val reportsList: ArrayList<Report>) : ListAdapter<Report, ReportAdapter.ReportViewHolder>(ReportDiffCallback()) {
+class ReportAdapter(private val reportsList: ArrayList<Report>) : ListAdapter<Report, ReportAdapter.ReportViewHolder>(
+    ReportDiffCallback()
+) {
 
 //    var onItemClick : ((Report) -> Unit)? = null
 

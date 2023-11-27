@@ -1,4 +1,4 @@
-package com.example.capstone.UnUsed
+package com.example.capstone.Adapters
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

@@ -12,12 +12,12 @@
 
     <item
         android:id="@+id/upload"
-        android:icon="@drawable/baseline_add_to_queue_24"
+        android:icon="@drawable/add"
         android:title="Report"/>
 
     <item
         android:id="@+id/menu"
-        android:icon="@drawable/menu_icon"
+        android:icon="@drawable/more"
         android:title="Menu"/>
 
 <!--    <item-->

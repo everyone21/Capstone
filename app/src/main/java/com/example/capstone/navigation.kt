@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.MenuInflater
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.example.capstone.bottomMenu.adminReservationView
 import com.example.capstone.databinding.ActivityMainBinding
 import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
@@ -55,6 +56,8 @@ class navigation : AppCompatActivity() {
                     startActivity(launch)}
                 R.id.navigation_read_report -> replace(AdminCheck())
                 R.id.menu -> replace(bottomMenuBurger())
+                R.id.appointments -> {val launch = Intent(this, adminReservationView::class.java)
+                    startActivity(launch)}
 //                R.id.message -> replace(user_send_message())
 //                R.id.profile -> replace(Profile())
 

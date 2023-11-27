@@ -62,7 +62,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="?attr/colorPrimary"
+            android:background="#CD228325"
             android:minHeight="?attr/actionBarSize"
             android:theme="?attr/actionBarTheme"
             tools:layout_editor_absoluteX="0dp"
@@ -84,7 +84,7 @@
                 android:layout_width="300dp"
                 android:layout_height="40dp"
                 android:background="@drawable/border"
-                android:layout_marginLeft="5dp"
+                android:layout_marginStart="5dp"
                 android:layout_gravity="center"/>
 
         </androidx.appcompat.widget.Toolbar>
@@ -103,11 +103,15 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
-        android:layout_height="65dp"
+        android:layout_height="60dp"
         android:layout_alignParentBottom="true"
-        android:background="@drawable/transpa_backrount"
+        android:background="#ffffff"
         app:menu="@menu/placeholder"
-        app:itemIconSize="35sp" />
+        app:itemIconSize="35sp"
+        app:itemTextColor="@color/black"
+        app:itemRippleColor="@color/white"
+        app:itemIconTint="@color/bluish"
+        app:itemTextAppearanceActive="@color/black"/>
 
 
 
