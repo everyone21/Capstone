@@ -40,20 +40,10 @@ class LocalShop : AppCompatActivity() {
         recyclerView = findViewById(R.id.shopsRecyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.setHasFixedSize(true)
-        shoplist = ArrayList()
+        shoplist = arrayListOf()
         shopAdapter = LocalshopAdapter(shoplist)
         recyclerView.adapter = shopAdapter
 
-        fetchData()
-
-
-    }
-
-
-
-
-    @SuppressLint("NotifyDataSetChanged")
-    private fun fetchData() {
         db = FirebaseFirestore.getInstance()
         db.collection("Shops")
             .addSnapshotListener(object : EventListener<QuerySnapshot>{
@@ -76,7 +66,36 @@ class LocalShop : AppCompatActivity() {
 
             })
 
+
     }
+
+
+
+//    @SuppressLint("NotifyDataSetChanged")
+//    private fun fetchData() {
+//        db = FirebaseFirestore.getInstance()
+//        db.collection("Shops")
+//            .addSnapshotListener(object : EventListener<QuerySnapshot>{
+//                @SuppressLint("NotifyDataSetChanged")
+//                override fun onEvent(value: QuerySnapshot?, error: FirebaseFirestoreException?) {
+//                    if (error != null){
+//
+//                        Log.e("Firestore Error", error.message.toString())
+//                        return
+//                    }
+//
+//                    for (dc:DocumentChange in value?.documentChanges!!){
+//                        if (dc.type == DocumentChange.Type.ADDED){
+//                            shoplist.add(dc.document.toObject(LocalShopArray::class.java))
+//                        }
+//
+//                    }
+//                    shopAdapter.notifyDataSetChanged()
+//                }
+//
+//            })
+//
+//    }
 
 
 }

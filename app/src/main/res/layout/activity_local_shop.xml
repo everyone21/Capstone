@@ -24,15 +24,16 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/postShop">
+        app:layout_constraintTop_toBottomOf="@+id/postShop"
+        android:layout_marginTop="25dp">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/shopsRecyclerView"
             android:layout_width="match_parent"
-            android:layout_height="829dp" />
+            android:layout_height="match_parent" />
     </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

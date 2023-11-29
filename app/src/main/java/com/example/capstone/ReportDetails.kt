@@ -24,6 +24,7 @@ class ReportDetails : AppCompatActivity() {
         backButton.setOnClickListener {
             val intent = Intent (this, navigation::class.java)
             startActivity(intent)
+            finish()
         }
 
         titleTextView = findViewById(R.id.reportTitleTextView)
@@ -56,14 +57,16 @@ class ReportDetails : AppCompatActivity() {
 
             val intent = Intent (this, navigation::class.java)
             startActivity(intent)
+            finish()
         }
 
         rejectButton.setOnClickListener {
             // Handle reject button
             deleteReport()
 
-            val intent = Intent (this, navigation::class.java)
+            val intent = Intent (this, adminResponse::class.java)
             startActivity(intent)
+            finish()
         }
     }
 

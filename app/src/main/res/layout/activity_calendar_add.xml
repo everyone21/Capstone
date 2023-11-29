@@ -39,7 +39,7 @@
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
-            android:background="@drawable/border"
+            android:background="@drawable/border_black"
             android:lines="2"
             android:padding="10dp" />
     </FrameLayout>
@@ -76,7 +76,7 @@
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
-            android:background="@drawable/border"
+            android:background="@drawable/border_black"
             android:gravity="top|start"
             android:lines="2"
             android:padding="10dp" />

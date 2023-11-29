@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".calendarEditActivity"
-    android:background="#B9775236">
+    android:background="#CCAA78">
 
 
     <ImageButton
@@ -24,7 +24,7 @@
         android:layout_width="355dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="72dp"
-        android:background="@drawable/border"
+        android:background="@drawable/border_black"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -58,7 +58,7 @@
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:background="@drawable/border"
+        android:background="@drawable/border_black"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
         <TextView
@@ -89,7 +89,7 @@
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:background="@drawable/border"
+        android:background="@drawable/border_black"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
 
         <TextView
@@ -158,7 +158,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="184dp"
-        android:background="@drawable/buttondesigns"
+        android:background="@drawable/bttndesign"
         android:fontFamily="monospace"
         android:text="Save"
         android:textSize="20sp"

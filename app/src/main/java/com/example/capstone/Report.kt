@@ -4,9 +4,9 @@ import android.os.Parcel
 import android.os.Parcelable
 
 data class Report(
-    val id: String,
-    val title: String,
-    val description: String,
-    val mediaURL: String?,
-    val date: String
+    val id: String? = null,
+    val title: String? = null,
+    val description: String? = null,
+    val mediaURL: String? = null,
+    val date: String? = null
 )
