@@ -1,4 +1,4 @@
-package com.example.capstone
+package com.example.capstone.List
 
 data class LocalShopArray(
     val ShopName : String ?= null,

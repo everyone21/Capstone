@@ -1,11 +1,11 @@
 package com.example.capstone
 
-import android.content.ClipData.Item
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.capstone.List.LocalShopArray
 
 class LocalshopAdapter(private val shopList: ArrayList<LocalShopArray>) : RecyclerView.Adapter<LocalshopAdapter.MyViewHolder2>() {
 

@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.capstone.R
-import com.example.capstone.Report
+import com.example.capstone.List.Report
 import com.example.capstone.databinding.ReportItemBinding
 
 class ReportAdapter(private val reportsList: java.util.ArrayList<Report>) : RecyclerView.Adapter<ReportAdapter.ReportViewHolder>()

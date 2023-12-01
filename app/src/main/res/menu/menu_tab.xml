@@ -16,12 +16,17 @@
         android:title="Report"/>
 
     <item
-        android:id="@+id/menu"
-        android:icon="@drawable/more"
-        android:title="Menu"/>
+        android:id="@+id/appointments"
+        android:icon="@drawable/reservation"
+        android:title="Appointments"/>
 
-<!--    <item-->
-<!--        android:id="@+id/profile"-->
-<!--        android:icon="@drawable/round_account_circle_24"-->
-<!--        android:title="profile"/>-->
+    <!--    <item-->
+    <!--        android:id="@+id/menu"-->
+    <!--        android:icon="@drawable/more"-->
+    <!--        android:title="Menu"/>-->
+
+    <item
+        android:id="@+id/profile"
+        android:icon="@drawable/round_account_circle_24"
+        android:title="profile"/>
 </menu>

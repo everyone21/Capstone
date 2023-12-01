@@ -1,4 +1,4 @@
-package com.example.capstone
+package com.example.capstone.List
 
 import android.os.Parcel
 import android.os.Parcelable

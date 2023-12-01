@@ -16,6 +16,9 @@
         android:theme="@style/Theme.Capstone"
         tools:targetApi="31">
         <activity
+            android:name=".bottomMenu.LocalShopView"
+            android:exported="false" />
+        <activity
             android:name=".NotYetAvailable.ReportInformation"
             android:exported="false" />
         <activity

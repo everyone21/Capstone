@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.capstone.List.Events
 
 class calendarEditAdapter(private val eventsList2: ArrayList<Events>) : RecyclerView.Adapter<calendarEditAdapter.MyViewHolder2>(){
 

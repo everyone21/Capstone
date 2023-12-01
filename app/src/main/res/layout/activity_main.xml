@@ -68,15 +68,15 @@
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="0dp">
 
-
-            <ImageButton
-                android:id="@+id/profileView"
+            <ImageView
+                android:id="@+id/menu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/round_account_circle_24"
+                android:src="@drawable/menu_icon"
                 android:background="@android:color/transparent"
-                android:contentDescription="Profile"
+                android:contentDescription="Menu"
                 android:layout_gravity="start"
+                app:menu="@menu/burger_nav"
                 android:layout_marginRight="15dp"/>
 
             <androidx.appcompat.widget.SearchView
@@ -112,7 +112,4 @@
         app:itemRippleColor="@color/white"
         app:itemIconTint="@color/green"
         app:itemTextAppearanceActive="@color/black"/>
-
-
-
 </RelativeLayout>

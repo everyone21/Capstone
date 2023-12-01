@@ -1,14 +1,15 @@
-package com.example.capstone
+package com.example.capstone.Unused
 
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.os.Message
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.cardview.widget.CardView
+import com.example.capstone.LoginPage
+import com.example.capstone.R
 import com.example.capstone.bottomMenu.LocalShop
 import com.example.capstone.bottomMenu.MessageActivity
 import com.example.capstone.bottomMenu.Reservation

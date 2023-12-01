@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.capstone.List.Events
 import com.google.firebase.firestore.DocumentChange
 import com.google.firebase.firestore.EventListener
 import com.google.firebase.firestore.FirebaseFirestore
@@ -31,7 +32,6 @@ class calendar : Fragment() {
         val view = inflater.inflate(R.layout.fragment_calendar, container, false)
         recyclerView = view.findViewById(R.id.upcomingEvents)
         recyclerView.layoutManager = LinearLayoutManager(context)
-        recyclerView.setHasFixedSize(true)
         eventsArray = arrayListOf()
         calendarAdapter = calendarAdapter(eventsArray)
         recyclerView.adapter = calendarAdapter
