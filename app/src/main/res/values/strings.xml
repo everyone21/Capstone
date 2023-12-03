@@ -110,4 +110,12 @@
         <item>Purok 32</item>
     </string-array>
 
+    <string-array name="typeOfProduct">
+        <item>Type of Business</item>
+        <item>Food and Beverages</item>
+        <item>Service Provider</item>
+        <item>Sari-Sari Store</item>
+        <item>Grocery/Mini-Grocery</item>
+    </string-array>
+
 </resources>

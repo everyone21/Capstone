@@ -26,7 +26,7 @@
 
     <EditText
         android:id="@+id/Username"
-        android:layout_width="280dp"
+        android:layout_width="300dp"
         android:layout_height="50dp"
         android:fontFamily="@font/adamina"
         android:hint="Username"
@@ -36,7 +36,7 @@
         android:textColor="#050505"
         android:drawableStart="@drawable/email"
         android:textColorHint="#85000000"
-        android:textSize="20sp"
+        android:textSize="17sp"
         android:background="@drawable/underline"
         app:layout_constraintBottom_toTopOf="@+id/Password"
         app:layout_constraintEnd_toEndOf="parent"
@@ -47,7 +47,7 @@
 
     <EditText
         android:id="@+id/Password"
-        android:layout_width="280dp"
+        android:layout_width="300dp"
         android:layout_height="50dp"
         android:fontFamily="@font/adamina"
         android:background="@drawable/underline"
@@ -58,7 +58,7 @@
         android:textAlignment="center"
         android:textColor="#040404"
         android:textColorHint="#85040404"
-        android:textSize="18sp"
+        android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"

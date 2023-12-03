@@ -16,6 +16,24 @@
         android:theme="@style/Theme.Capstone"
         tools:targetApi="31">
         <activity
+            android:name=".Reservation.AdminReservationViewItems"
+            android:exported="false" />
+        <activity
+            android:name=".LocalShops.Market"
+            android:exported="false" />
+        <activity
+            android:name=".LocalShops.Services"
+            android:exported="false" />
+        <activity
+            android:name=".LocalShops.FoodnBev"
+            android:exported="false" />
+        <activity
+            android:name=".Dashboard.BarangayOfficials"
+            android:exported="false" />
+        <activity
+            android:name=".Dashboard.EmergencyContacts"
+            android:exported="false" />
+        <activity
             android:name=".bottomMenu.LocalShopView"
             android:exported="false" />
         <activity
@@ -25,7 +43,7 @@
             android:name=".adminResponse"
             android:exported="false" />
         <activity
-            android:name=".bottomMenu.adminReservationView"
+            android:name=".Reservation.adminReservationView"
             android:exported="false" />
         <activity
             android:name=".bottomMenu.ReservationList"

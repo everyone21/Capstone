@@ -25,7 +25,7 @@ class LocalshopAdapter(private val shopList: ArrayList<LocalShopArray>) : Recycl
 
     override fun getItemCount(): Int = shopList.size
 
-    public class MyViewHolder2(itemView : View) : RecyclerView.ViewHolder(itemView){
+    class MyViewHolder2(itemView : View) : RecyclerView.ViewHolder(itemView){
         val shopName: TextView = itemView.findViewById(R.id.shopName)
         val shopDes: TextView = itemView.findViewById(R.id.shopDes)
         val shopLoc: TextView = itemView.findViewById(R.id.shopLoc)

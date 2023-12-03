@@ -16,6 +16,7 @@ import com.google.firebase.firestore.DocumentChange
 import com.google.firebase.firestore.EventListener
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.FirebaseFirestoreException
+import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.QuerySnapshot
 
 class AdminCalendarView : Fragment() {
@@ -59,8 +60,8 @@ class AdminCalendarView : Fragment() {
     private fun EventChangeListener(){
 
         db = FirebaseFirestore.getInstance()
-        db.collection("EventsAnnouncement").
-        addSnapshotListener(object : EventListener<QuerySnapshot> {
+        db.collection("EventsAnnouncement").orderBy("eventDate", Query.Direction.DESCENDING)
+            .addSnapshotListener(object : EventListener<QuerySnapshot> {
             @SuppressLint("NotifyDataSetChanged")
             override fun onEvent(
                 value: QuerySnapshot?,

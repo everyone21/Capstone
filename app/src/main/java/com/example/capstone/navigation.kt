@@ -8,9 +8,10 @@ import androidx.appcompat.widget.PopupMenu
 import android.view.MenuInflater
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.example.capstone.bottomMenu.LocalShop
 import com.example.capstone.bottomMenu.LocalShopFragment
-import com.example.capstone.bottomMenu.adminReservationView
+import com.example.capstone.Reservation.adminReservationView
+import com.example.capstone.bottomMenu.Reservation
+import com.example.capstone.bottomMenu.ReservationList
 import com.example.capstone.databinding.ActivityMainBinding
 import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
@@ -29,7 +30,7 @@ class navigation : AppCompatActivity() {
 
         val user = FirebaseAuth.getInstance().currentUser
         val bottomNavigationView = binding.bottomNavigationView
-        replace(Home())
+        replace(dashboard())
 
 //        val profile = findViewById<ImageButton>(R.id.profileView)
 //
@@ -54,15 +55,18 @@ class navigation : AppCompatActivity() {
 
         binding.bottomNavigationView.setOnItemSelectedListener {
             when(it.itemId){
-                R.id.home -> replace(Home())
+                R.id.home -> replace(dashboard())
                 R.id.calendar -> replace(calendar())
 //                R.id.admincalendar -> {val launch = Intent(this, AdminCalendarUpdate::class.java)
 //                    startActivity(launch)}
                 R.id.admincalendar -> replace(AdminCalendarView())
-                R.id.upload -> {val launch = Intent(this, UserReport::class.java)
-                    startActivity(launch)}
+                R.id.upload -> replace(Home())
+//                {val launch = Intent(this, UserReport::class.java)
+//                    startActivity(launch)}
                 R.id.navigation_read_report -> replace(AdminCheck())
 //                R.id.menu -> replace(bottomMenuBurger())
+                R.id.userappointments ->  {val launch = Intent(this, ReservationList::class.java)
+                    startActivity(launch)}
                 R.id.appointments -> {val launch = Intent(this, adminReservationView::class.java)
                     startActivity(launch)}
 //                R.id.message -> replace(user_send_message())

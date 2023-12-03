@@ -1,6 +1,7 @@
 package com.example.capstone
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -37,10 +38,14 @@ class calendarAdd : AppCompatActivity() {
 
         add.setOnClickListener {
             events()
+            finish()
         }
     }
     @RequiresApi(Build.VERSION_CODES.M)
     private fun events(){
+
+        val c = Calendar.getInstance()
+
         val title: EditText = findViewById(R.id.eventTitle)
         val desc: EditText = findViewById(R.id.eventDescription)
 
@@ -49,12 +54,14 @@ class calendarAdd : AppCompatActivity() {
 
         val datePicker: DatePicker = findViewById(R.id.datePicker)
         val timePicker: TimePicker = findViewById(R.id.time_picker)
-        
+
+        val monthp = datePicker.month + 1
+        val month = monthp.toString()
+
+
         val day = datePicker.dayOfMonth.toString()
-        val month = datePicker.month.toString()
         val year = datePicker.year.toString()
         val date = "$month/$day/$year"
-
         val hour = timePicker.hour.toString()
         val min = timePicker.minute.toString()
 

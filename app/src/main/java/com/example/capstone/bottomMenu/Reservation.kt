@@ -12,6 +12,7 @@ import android.widget.EditText
 import android.widget.Spinner
 import android.widget.Toast
 import com.example.capstone.R
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -27,12 +28,15 @@ class Reservation : AppCompatActivity() {
     private lateinit var submit : Button
     private lateinit var df: DocumentReference
     private lateinit var fStore: FirebaseFirestore
+    private lateinit var currentUserEmail: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_reservation)
 
         fStore = FirebaseFirestore.getInstance()
+
+        currentUserEmail = FirebaseAuth.getInstance().currentUser?.email ?: ""
 
         spinner = findViewById(R.id.purpose_spinner)
         val adapter = ArrayAdapter.createFromResource(this, R.array.purpose, android.R.layout.simple_spinner_item)
@@ -75,6 +79,7 @@ class Reservation : AppCompatActivity() {
 
             df = fStore.collection("Appointments").document()
             val appointment = hashMapOf(
+                "user_email" to currentUserEmail,
                 "first_name" to fname,
                 "last_name" to lname,
                 "purpose" to purp,

@@ -1,6 +1,7 @@
 package com.example.capstone
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.capstone.Adapters.ReportAdapter
 import com.example.capstone.List.Report
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 import java.text.SimpleDateFormat
@@ -22,7 +24,7 @@ class Home : Fragment() {
     private lateinit var reportAdapter: ReportAdapter
     private lateinit var reportsList: ArrayList<Report>
 
-    @SuppressLint("NotifyDataSetChanged")
+    @SuppressLint("NotifyDataSetChanged", "MissingInflatedId")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -30,6 +32,13 @@ class Home : Fragment() {
         val db = FirebaseFirestore.getInstance()
         val reportsCollection = db.collection("reports")
         val view = inflater.inflate(R.layout.fragment_home, container, false)
+
+        val add: FloatingActionButton = view.findViewById(R.id.addReport)
+
+        add.setOnClickListener{
+            val intent = Intent(context, UserReport::class.java)
+            startActivity(intent)
+        }
 
         recyclerView = view.findViewById(R.id.postContainer)
         recyclerView.layoutManager = LinearLayoutManager(context)
@@ -75,35 +84,6 @@ class Home : Fragment() {
 
     }
 
-//    private fun ReportChangeListener(){
-//        db = FirebaseFirestore.getInstance()
-//        val reportsCollection = db.collection("reports")
-//
-//        reportsCollection
-//            .whereEqualTo("status", "Accepted")
-//            .orderBy("timestamp", Query.Direction.DESCENDING)
-//            .addSnapshotListener(object : EventListener<QuerySnapshot>{
-//                @SuppressLint("NotifyDataSetChanged")
-//                override fun onEvent(
-//                    value: QuerySnapshot?,
-//                    error: FirebaseFirestoreException?) {
-//                    if (error != null){
-//
-//                        Log.e("Firestore Error", error.message.toString())
-//                        return
-//                    }
-//                    for (dc: DocumentChange in value?.documentChanges!!){
-//                        if (dc.type == DocumentChange.Type.ADDED){
-//                            reportsArray.add(dc.document.toObject(Report::class.java))
-//
-//                        }
-//
-//                    }
-//                    reportAdapter.notifyDataSetChanged()
-//                }
-//
-//            })
-//    }
 
     private fun formatDate(date: Date?): String {
         date?.let {

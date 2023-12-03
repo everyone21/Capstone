@@ -12,45 +12,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <!--        <LinearLayout-->
-        <!--            android:id="@+id/linearLayout6"-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:orientation="vertical"-->
-        <!--            app:layout_constraintEnd_toEndOf="parent"-->
-        <!--            app:layout_constraintStart_toStartOf="parent"-->
-        <!--            app:layout_constraintTop_toTopOf="parent"-->
-        <!--            android:layout_margin="20dp"-->
-        <!--            android:background="@drawable/border">-->
-
-        <!--            <TextView-->
-        <!--                android:id="@+id/textView9"-->
-        <!--                android:layout_width="wrap_content"-->
-        <!--                android:layout_height="wrap_content"-->
-        <!--                android:layout_gravity="center"-->
-        <!--                android:layout_marginTop="20dp"-->
-        <!--                android:fontFamily="@font/adamina"-->
-        <!--                android:text="Appointment Purpose"-->
-        <!--                android:textColor="@color/black"-->
-        <!--                android:textSize="25sp" />-->
-
-        <!--            <FrameLayout-->
-        <!--                android:id="@+id/frameLayout4"-->
-        <!--                android:layout_width="210dp"-->
-        <!--                android:layout_height="wrap_content"-->
-        <!--                android:layout_marginTop="20dp"-->
-        <!--                android:layout_marginBottom="20dp"-->
-        <!--                android:background="@drawable/border"-->
-        <!--                android:layout_gravity="center">-->
-
-        <!--                <Spinner-->
-        <!--                    android:id="@+id/purpose_spinner"-->
-        <!--                    android:layout_width="match_parent"-->
-        <!--                    android:layout_height="65dp" />-->
-
-        <!--            </FrameLayout>-->
-        <!--        </LinearLayout>-->
-
         <LinearLayout
             android:id="@+id/linearLayout7"
             android:layout_width="match_parent"

@@ -18,7 +18,6 @@ import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import com.example.capstone.R
-import com.example.capstone.UserReport
 import com.example.capstone.navigation
 import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
@@ -166,16 +165,16 @@ class UserReportFragment : Fragment() {
             }
         }
 
+        return view
+    }
 
     @Deprecated("Deprecated in Java")
-    fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        if (requestCode == UserReport.PICK_MEDIA_REQUEST && resultCode == Activity.RESULT_OK) {
+        if (requestCode == UserReportFragment.PICK_MEDIA_REQUEST && resultCode == Activity.RESULT_OK) {
             mediaUri = data?.data
         }
-    }
-        return view
     }
 
 

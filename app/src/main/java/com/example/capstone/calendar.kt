@@ -16,6 +16,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.FirebaseFirestoreException
 import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.QuerySnapshot
+import java.util.Locale
 
 class calendar : Fragment() {
 
@@ -30,11 +31,15 @@ class calendar : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_calendar, container, false)
+
         recyclerView = view.findViewById(R.id.upcomingEvents)
         recyclerView.layoutManager = LinearLayoutManager(context)
+        recyclerView.setHasFixedSize(true)
+
         eventsArray = arrayListOf()
         calendarAdapter = calendarAdapter(eventsArray)
         recyclerView.adapter = calendarAdapter
+
 
         EventChangeListener()
 
@@ -44,7 +49,7 @@ class calendar : Fragment() {
     private fun EventChangeListener(){
 
         db = FirebaseFirestore.getInstance()
-        db.collection("EventsAnnouncement").orderBy("eventDate", Query.Direction.ASCENDING)
+        db.collection("EventsAnnouncement").orderBy("eventDate", Query.Direction.DESCENDING)
             .addSnapshotListener(object : EventListener<QuerySnapshot>{
                     @SuppressLint("NotifyDataSetChanged")
                     override fun onEvent(
