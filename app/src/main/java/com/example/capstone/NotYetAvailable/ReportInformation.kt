@@ -1,23 +1,43 @@
 package com.example.capstone.NotYetAvailable
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
+import com.bumptech.glide.Glide
 import com.example.capstone.R
 
 class ReportInformation : AppCompatActivity() {
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_report_information)
 
-        val title: TextView = findViewById(R.id.reporttitle)
-        val description: TextView = findViewById(R.id.reportdesc)
-        val date: TextView = findViewById(R.id.date)
+        val titletxt: TextView = findViewById(R.id.reporttitle)
+        val descriptiontxt: TextView = findViewById(R.id.reportdesc)
+        val datetxt: TextView = findViewById(R.id.date)
         val image: ImageView = findViewById(R.id.mediaImageView)
+        val username: TextView = findViewById(R.id.userEmail)
 
-        val bundle: Bundle? = intent.extras
-        val titl = bundle?.getString("title")
+        val title = intent.getStringExtra("title")
+        val date = intent.getStringExtra("date")
+        val description = intent.getStringExtra("description")
+        val mediaURL = intent.getStringExtra("mediaURL")
+        val userMail = intent.getStringExtra("UserID")
+
+
+        titletxt.text = title
+        datetxt.text = date
+        descriptiontxt.text = description
+        username.text = userMail
+
+        if (!mediaURL.isNullOrEmpty()) {
+            image.visibility = ImageView.VISIBLE
+            Glide.with(this)
+                .load(mediaURL)
+                .into(image)
+        }
 
     }
 }

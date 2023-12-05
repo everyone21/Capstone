@@ -5,15 +5,14 @@
     android:layout_height="wrap_content"
     android:layout_margin="15dp"
     android:background="#f0f0f0"
-    app:cardCornerRadius="15dp"
+    app:cardCornerRadius="20dp"
     app:cardElevation="8dp">
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="3dp"
-        android:background="#A6ECAA"
+        android:background="#7A4603"
         android:orientation="vertical"
         android:padding="16dp">
 
@@ -30,11 +29,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ellipsize="end"
-            android:fontFamily="casual"
+            android:fontFamily="@font/architects_daughter"
             android:maxLines="1"
             android:text="WHAT: "
             android:textAllCaps="true"
-            android:textColor="#000000"
+            android:textColor="#FFFDFD"
             android:textSize="16sp" />
 
         <TextView
@@ -45,7 +44,7 @@
             android:ellipsize="end"
             android:fontFamily="casual"
             android:text="title"
-            android:textColor="#000000"
+            android:textColor="#FDFDFD"
             android:textSize="20sp" />
 
 
@@ -68,10 +67,10 @@
             android:id="@+id/date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="casual"
+            android:fontFamily="@font/architects_daughter"
             android:text="WHEN: "
             android:textAllCaps="true"
-            android:textColor="#000000"
+            android:textColor="#FFFEFE"
             android:textSize="16sp" />
 
         <LinearLayout
@@ -88,7 +87,7 @@
                 android:layout_marginEnd="5dp"
                 android:fontFamily="casual"
                 android:text="date "
-                android:textColor="#000000"
+                android:textColor="#FFFDFD"
                 android:textSize="20sp" />
 
             <TextView
@@ -96,7 +95,8 @@
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
                 android:text="/"
-                android:fontFamily="casual"/>
+                android:fontFamily="casual"
+                android:textColor="#ffffff"/>
 
             <TextView
                 android:id="@+id/time"
@@ -104,7 +104,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="casual"
                 android:text=" time"
-                android:textColor="#000000"
+                android:textColor="#FFFFFF"
                 android:textSize="20sp" />
 
         </LinearLayout>
@@ -149,10 +149,10 @@
                 android:id="@+id/where"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="casual"
+                android:fontFamily="@font/architects_daughter"
                 android:text="WHERE: "
                 android:textAllCaps="true"
-                android:textColor="#000000"
+                android:textColor="#FFFFFF"
                 android:textSize="16sp" />
 
             <TextView
@@ -162,7 +162,7 @@
                 android:layout_gravity="center"
                 android:fontFamily="casual"
                 android:text="where"
-                android:textColor="#000000"
+                android:textColor="#FFFFFF"
                 android:textSize="20sp" />
 
         </LinearLayout>

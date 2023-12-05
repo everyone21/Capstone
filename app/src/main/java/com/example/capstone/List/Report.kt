@@ -8,5 +8,6 @@ data class Report(
     val title: String? = null,
     val description: String? = null,
     val mediaURL: String? = null,
-    val date: String? = null
+    val date: String? = null,
+    val UserID: String? = null
 )

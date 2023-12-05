@@ -17,8 +17,11 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import java.util.UUID
 import androidx.activity.result.ActivityResultLauncher
+import com.google.firebase.auth.FirebaseAuth
 
 class UserReport : AppCompatActivity() {
+
+    private lateinit var fAuth : FirebaseAuth
     private lateinit var titleEditText: EditText
     private lateinit var descriptionEditText: EditText
     private lateinit var submitButton: Button
@@ -27,6 +30,7 @@ class UserReport : AppCompatActivity() {
     private lateinit var imagePickerActivityResult: ActivityResultLauncher<Intent>
     private var mediaUri: Uri? = null
     private var submissionInProgress = false
+
 
     companion object {
         const val PICK_MEDIA_REQUEST = 1
@@ -39,6 +43,7 @@ class UserReport : AppCompatActivity() {
         val db = FirebaseFirestore.getInstance()
         val reportsCollection = db.collection("reports")
         val backButton = findViewById<Button>(R.id.backBtn)
+        fAuth = FirebaseAuth.getInstance()
 
         titleEditText = findViewById<EditText>(R.id.topicReportInput)
         descriptionEditText = findViewById<EditText>(R.id.descriptionReportInput)
@@ -70,6 +75,7 @@ class UserReport : AppCompatActivity() {
         submitButton.setOnClickListener {
             val title = titleEditText.text.toString()
             val description = descriptionEditText.text.toString()
+            val user = fAuth.currentUser?.email.toString()
 
             // Prevent double submission
             if (submissionInProgress) {
@@ -95,7 +101,8 @@ class UserReport : AppCompatActivity() {
                                     "description" to description,
                                     "mediaURL" to mediaURL,
                                     "timestamp" to FieldValue.serverTimestamp(),
-                                    "status" to "Pending"
+                                    "status" to "Pending",
+                                    "UserID" to user
                                 )
 
                                 reportsCollection.add(report)
@@ -132,7 +139,8 @@ class UserReport : AppCompatActivity() {
                     "title" to title,
                     "timestamp" to FieldValue.serverTimestamp(),
                     "description" to description,
-                    "status" to "Pending"
+                    "status" to "Pending",
+                    "UserID" to user
                 )
                 submissionInProgress = true
 

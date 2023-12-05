@@ -11,6 +11,8 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.capstone.Adapters.calendarAdapter
+import com.example.capstone.Dashboard.dashboardEvents
 import com.example.capstone.List.Events
 import com.google.firebase.firestore.DocumentChange
 import com.google.firebase.firestore.EventListener
@@ -51,7 +53,7 @@ class AdminCalendarView : Fragment() {
         recyclerView.setHasFixedSize(true)
         eventsArray = arrayListOf()
         calendarAdapter = calendarAdapter(eventsArray)
-        recyclerView.adapter = calendarAdapter
+//        recyclerView.adapter = calendarAdapter
 
         EventChangeListener()
 
@@ -78,6 +80,19 @@ class AdminCalendarView : Fragment() {
                         eventsArray.add(dc.document.toObject(Events::class.java))
 
                     }
+                    val adapter = calendarAdapter(eventsArray)
+                    recyclerView.adapter = adapter
+                    adapter.onItemClickListener(object : calendarAdapter.onItemClickListener {
+                        override fun onItemClick(position: Int) {
+                            val intent = Intent(context, dashboardEvents::class.java)
+                            intent.putExtra("title", eventsArray[position].eventTitle)
+                            intent.putExtra("date", eventsArray[position].eventDate)
+                            intent.putExtra("place", eventsArray[position].eventPlace)
+                            intent.putExtra("time", eventsArray[position].eventTime)
+                            startActivity(intent)
+                        }
+
+                    })
                 }
 
                 calendarAdapter.notifyDataSetChanged()

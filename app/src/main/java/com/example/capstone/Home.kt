@@ -3,14 +3,17 @@ package com.example.capstone
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.capstone.Adapters.ReportAdapter
 import com.example.capstone.List.Report
+import com.example.capstone.NotYetAvailable.ReportInformation
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
@@ -35,7 +38,7 @@ class Home : Fragment() {
 
         val add: FloatingActionButton = view.findViewById(R.id.addReport)
 
-        add.setOnClickListener{
+        add.setOnClickListener {
             val intent = Intent(context, UserReport::class.java)
             startActivity(intent)
         }
@@ -47,38 +50,58 @@ class Home : Fragment() {
         reportsList = arrayListOf()
         reportAdapter = ReportAdapter(reportsList)
 
-        recyclerView.adapter = reportAdapter
-
         // Fetch reports from Firestore and update the adapter
         reportsCollection
             .whereEqualTo("status", "Accepted")
-            .orderBy("timestamp", Query.Direction.DESCENDING) // Order by timestamp in descending order
-            .addSnapshotListener{ snapshot, e ->
+            .orderBy(
+                "timestamp",
+                Query.Direction.DESCENDING
+            ) // Order by timestamp in descending order
+            .addSnapshotListener { snapshot, e ->
                 if (e != null) {
-                    // Handle the error
-                }
-                else {
-                    snapshot?.let { nonNullSnapshot ->
-                        for (document in nonNullSnapshot.documents) {
-                            val id = document.id
-                            val title = document.getString("title") ?: ""
-                            val description = document.getString("description") ?: ""
-                            val mediaURL = document.getString("mediaURL")
-                            val timestamp = document.getDate("timestamp")
-                            val formattedDate = formatDate(timestamp)
-                            val report = Report(
-                                id,
-                                title,
-                                description,
-                                mediaURL,
-                                formattedDate
-                            )
-                            reportsList.add(report)
-                        }
+                    Log.e("Firestore Error", e.message.toString())
 
-                        reportAdapter.notifyDataSetChanged()
-                    }
                 }
+                snapshot?.let { nonNullSnapshot ->
+                    for (document in nonNullSnapshot.documents) {
+                        val id = document.id
+                        val title = document.getString("title") ?: ""
+                        val description = document.getString("description") ?: ""
+                        val mediaURL = document.getString("mediaURL")
+                        val timestamp = document.getDate("timestamp")
+                        val formattedDate = formatDate(timestamp)
+                        val userID = document.getString("UserID") ?: ""
+                        val report = Report(
+                            id,
+                            title,
+                            description,
+                            mediaURL,
+                            formattedDate,
+                            userID
+
+                        )
+                        reportsList.add(report)
+
+                        reportAdapter = ReportAdapter(reportsList)
+                        recyclerView.adapter = reportAdapter
+                        reportAdapter.onItemClickListener2(object :
+                            ReportAdapter.onItemClickListener2 {
+                            override fun onItemClick(position: Int) {
+                                val intent = Intent(context, ReportInformation::class.java)
+                                intent.putExtra("title", reportsList[position].title)
+                                intent.putExtra("date", reportsList[position].date)
+                                intent.putExtra("description", reportsList[position].description)
+                                intent.putExtra("mediaURL", reportsList[position].mediaURL)
+                                intent.putExtra("UserID", reportsList[position].UserID)
+                                startActivity(intent)
+                            }
+
+                        })
+                    }
+                    reportAdapter.notifyDataSetChanged()
+                }
+
+
             }
         return view
 

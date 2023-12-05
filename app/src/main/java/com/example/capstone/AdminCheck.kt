@@ -37,14 +37,14 @@ class AdminCheck : Fragment() {
         )
         reportsListView.adapter = reportsAdapter
 
-        reportsListView.setOnItemClickListener(AdapterView.OnItemClickListener { _, _, position, _ ->
+        reportsListView.onItemClickListener = AdapterView.OnItemClickListener { _, _, position, _ ->
             val intent = Intent(requireContext(), ReportDetails::class.java)
             intent.putExtra("title", reportTitles[position])
             intent.putExtra("date", reportDates[position])
             intent.putExtra("description", reportDescriptions[position])
             intent.putExtra("mediaURL", reportMediaURLs[position])
             startActivity(intent)
-        })
+        }
 
         loadReports()
 

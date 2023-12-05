@@ -38,6 +38,7 @@ class calendarEditActivity : AppCompatActivity() {
         desc.text = descr
         time.text = tim
 
+        val a = title.toString()
         update.setOnClickListener {
             val upTitle = title.text.toString()
             val upDate= date.text.toString()
@@ -50,8 +51,7 @@ class calendarEditActivity : AppCompatActivity() {
                 "eventTime" to upTime,
                 "eventTitle" to upTitle
             )
-            db.collection("EventsAnnouncement").document().update(updateMap)
-
+            db.collection("EventsAnnouncement").document(a).update(updateMap)
             Toast.makeText(this, "Updated Successfully", Toast.LENGTH_SHORT).show()
         }
 

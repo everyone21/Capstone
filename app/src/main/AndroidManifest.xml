@@ -16,6 +16,9 @@
         android:theme="@style/Theme.Capstone"
         tools:targetApi="31">
         <activity
+            android:name=".Dashboard.dashboardEvents"
+            android:exported="false" />
+        <activity
             android:name=".Reservation.AdminReservationViewItems"
             android:exported="false" />
         <activity

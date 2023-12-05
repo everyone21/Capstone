@@ -1,6 +1,7 @@
 package com.example.capstone
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -9,6 +10,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.capstone.Adapters.calendarAdapter
+import com.example.capstone.Adapters.dashboardEventsAdapter
+import com.example.capstone.Dashboard.dashboardEvents
 import com.example.capstone.List.Events
 import com.google.firebase.firestore.DocumentChange
 import com.google.firebase.firestore.EventListener
@@ -16,7 +20,6 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.FirebaseFirestoreException
 import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.QuerySnapshot
-import java.util.Locale
 
 class calendar : Fragment() {
 
@@ -38,7 +41,7 @@ class calendar : Fragment() {
 
         eventsArray = arrayListOf()
         calendarAdapter = calendarAdapter(eventsArray)
-        recyclerView.adapter = calendarAdapter
+//        recyclerView.adapter = calendarAdapter
 
 
         EventChangeListener()
@@ -67,6 +70,19 @@ class calendar : Fragment() {
                                 eventsArray.add(dc.document.toObject(Events::class.java))
 
                             }
+                            val adapter = calendarAdapter(eventsArray)
+                            recyclerView.adapter = adapter
+                            adapter.onItemClickListener(object : calendarAdapter.onItemClickListener {
+                                override fun onItemClick(position: Int) {
+                                    val intent = Intent(context, dashboardEvents::class.java)
+                                    intent.putExtra("title", eventsArray[position].eventTitle)
+                                    intent.putExtra("date", eventsArray[position].eventDate)
+                                    intent.putExtra("place", eventsArray[position].eventPlace)
+                                    intent.putExtra("time", eventsArray[position].eventTime)
+                                    startActivity(intent)
+                                }
+
+                            })
                         }
 
                         calendarAdapter.notifyDataSetChanged()
