@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.capstone.List.LocalShopArray
@@ -22,9 +23,13 @@ class Market : AppCompatActivity() {
     private lateinit var shoplist : ArrayList<LocalShopArray>
     private lateinit var shopAdapter : LocalshopAdapter
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_market)
+        val back = findViewById<Button>(R.id.back)
+
+        back.setOnClickListener { finish() }
 
 //        recyclerView = findViewById(R.id.shops)
 //        recyclerView.layoutManager = LinearLayoutManager(this)

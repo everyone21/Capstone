@@ -17,6 +17,7 @@ class dashboardEvents : AppCompatActivity() {
         val date: TextView = findViewById(R.id.whenday)
         val desc: TextView = findViewById(R.id.where)
         val time: TextView = findViewById(R.id.whentime)
+        val back: Button = findViewById(R.id.back)
 
         val bundle : Bundle?= intent.extras
         val titl = bundle?.getString("title")
@@ -30,6 +31,7 @@ class dashboardEvents : AppCompatActivity() {
         desc.text = descr
         time.text = tim
 
+        back.setOnClickListener { finish() }
 
 
 

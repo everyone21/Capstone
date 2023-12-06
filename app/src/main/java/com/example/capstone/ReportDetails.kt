@@ -54,7 +54,6 @@ class ReportDetails : AppCompatActivity() {
         acceptButton.setOnClickListener {
             // Handle accept button
             updateReportStatus("Accepted")
-
             val intent = Intent (this, navigation::class.java)
             startActivity(intent)
             finish()

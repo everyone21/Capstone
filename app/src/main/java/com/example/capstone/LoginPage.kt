@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -23,6 +24,7 @@ class LoginPage : AppCompatActivity() {
     private lateinit var fAuth: FirebaseAuth
     private lateinit var df: DocumentReference
     private lateinit var fStore: FirebaseFirestore
+
 
     companion object {
         const val ADMIN_EMAIL = "admin@email.com"
@@ -89,6 +91,7 @@ class LoginPage : AppCompatActivity() {
 
 
     }
+
 
 
 

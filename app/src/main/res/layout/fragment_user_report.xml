@@ -85,15 +85,15 @@
 
         </LinearLayout>
 
-<!--        <CheckBox-->
-<!--            android:id="@+id/checkBox2"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="Make Report Private"-->
-<!--            android:textSize="20sp"-->
-<!--            android:fontFamily="serif"-->
-<!--            android:layout_gravity="start"-->
-<!--            android:layout_margin="25dp"/>-->
+        <CheckBox
+            android:id="@+id/checkBox2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Make Report Private"
+            android:textSize="20sp"
+            android:fontFamily="serif"
+            android:layout_margin="25dp"
+            android:checked="false"/>
 
         <Button
             android:id="@+id/submitButton"

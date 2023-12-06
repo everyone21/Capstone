@@ -1,17 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.appcompat.widget.LinearLayoutCompat
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AdminCheck"
-    android:background="#f0f0f0">
+    android:background="#f0f0f0"
+    android:orientation="vertical">
+
 
     <ListView
         android:id="@+id/reportsListView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:divider="#F44848"
-        android:dividerHeight="2dp"/>
+        android:dividerHeight="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
 </androidx.appcompat.widget.LinearLayoutCompat>

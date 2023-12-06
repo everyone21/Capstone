@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.LinearLayout
@@ -28,6 +29,7 @@ class UserReport : AppCompatActivity() {
     private lateinit var uploadMediaButton: LinearLayout
     private lateinit var uploadMediaImage: ImageView
     private lateinit var imagePickerActivityResult: ActivityResultLauncher<Intent>
+    private lateinit var user : String
     private var mediaUri: Uri? = null
     private var submissionInProgress = false
 
@@ -43,6 +45,7 @@ class UserReport : AppCompatActivity() {
         val db = FirebaseFirestore.getInstance()
         val reportsCollection = db.collection("reports")
         val backButton = findViewById<Button>(R.id.backBtn)
+        val checkBox = findViewById<CheckBox>(R.id.checkBox2)
         fAuth = FirebaseAuth.getInstance()
 
         titleEditText = findViewById<EditText>(R.id.topicReportInput)
@@ -55,6 +58,8 @@ class UserReport : AppCompatActivity() {
             val intent = Intent(this, navigation::class.java)
             startActivity(intent)
         }
+
+
 
         imagePickerActivityResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
             if (result.resultCode == Activity.RESULT_OK) {
@@ -75,7 +80,17 @@ class UserReport : AppCompatActivity() {
         submitButton.setOnClickListener {
             val title = titleEditText.text.toString()
             val description = descriptionEditText.text.toString()
-            val user = fAuth.currentUser?.email.toString()
+            user = fAuth.currentUser?.email.toString()
+
+
+                user = if (checkBox.isChecked){
+                    "Anonymous Sender"
+                }
+                else{
+                    fAuth.currentUser?.email.toString()
+                }
+
+//            val user = fAuth.currentUser?.email.toString()
 
             // Prevent double submission
             if (submissionInProgress) {

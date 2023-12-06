@@ -24,6 +24,7 @@
         app:layout_constraintTop_toBottomOf="@+id/Password"
         app:layout_constraintVertical_bias="0.198" />
 
+
     <EditText
         android:id="@+id/Username"
         android:layout_width="300dp"
@@ -112,6 +113,7 @@
             android:textColor="#FF2626"
             android:textSize="70sp"/>
     </LinearLayout>
+
 
     <View
         android:id="@+id/view"

@@ -29,35 +29,39 @@ class FoodnBev : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_foodn_bev)
 
-            recyclerView = findViewById(R.id.fnb)
-            recyclerView.layoutManager = LinearLayoutManager(this)
-            recyclerView.setHasFixedSize(true)
-            shoplist = arrayListOf()
-            shopAdapter = LocalshopAdapter(shoplist)
-            recyclerView.adapter = shopAdapter
+        val back = findViewById<Button>(R.id.back)
 
-            db = FirebaseFirestore.getInstance()
-            db.collection("Shops").whereEqualTo("TypeOfBusiness", "Food and Beverages")
-                .addSnapshotListener(object : EventListener<QuerySnapshot> {
-                    @SuppressLint("NotifyDataSetChanged")
-                    override fun onEvent(value: QuerySnapshot?, error: FirebaseFirestoreException?) {
-                        if (error != null){
+        back.setOnClickListener { finish() }
 
-                            Log.e("Firestore Error", error.message.toString())
-                            return
-                        }
-
-                        for (dc: DocumentChange in value?.documentChanges!!){
-                            if (dc.type == DocumentChange.Type.ADDED){
-                                shoplist.add(dc.document.toObject(LocalShopArray::class.java))
-                            }
-                        }
-                        shopAdapter.notifyDataSetChanged()
-                    }
-
-                })
-
-
+//            recyclerView = findViewById(R.id.fnb)
+//            recyclerView.layoutManager = LinearLayoutManager(this)
+//            recyclerView.setHasFixedSize(true)
+//            shoplist = arrayListOf()
+//            shopAdapter = LocalshopAdapter(shoplist)
+//            recyclerView.adapter = shopAdapter
+//
+//            db = FirebaseFirestore.getInstance()
+//            db.collection("Shops").whereEqualTo("TypeOfBusiness", "Food and Beverages")
+//                .addSnapshotListener(object : EventListener<QuerySnapshot> {
+//                    @SuppressLint("NotifyDataSetChanged")
+//                    override fun onEvent(value: QuerySnapshot?, error: FirebaseFirestoreException?) {
+//                        if (error != null){
+//
+//                            Log.e("Firestore Error", error.message.toString())
+//                            return
+//                        }
+//
+//                        for (dc: DocumentChange in value?.documentChanges!!){
+//                            if (dc.type == DocumentChange.Type.ADDED){
+//                                shoplist.add(dc.document.toObject(LocalShopArray::class.java))
+//                            }
+//                        }
+//                        shopAdapter.notifyDataSetChanged()
+//                    }
+//
+//                })
+//
+//
         }
 
 

@@ -1,5 +1,6 @@
 package com.example.capstone
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Button
 import android.widget.ListView
 import androidx.fragment.app.Fragment
 import com.google.firebase.firestore.FirebaseFirestore
@@ -22,6 +24,7 @@ class AdminCheck : Fragment() {
     private val reportMediaURLs = ArrayList<String>()
     private lateinit var reportsAdapter: ArrayAdapter<String>
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -47,6 +50,8 @@ class AdminCheck : Fragment() {
         }
 
         loadReports()
+
+
 
         return view
     }
