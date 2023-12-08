@@ -5,20 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".LocalShops.Services"
-    android:background="#97BBD8">
-
-    <Button
-        android:id="@+id/back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#00FFFFFF"
-        android:text="back"
-        android:textColor="#FF0000"
-        android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    android:background="#FFFFFF">
 
     <TextView
         android:id="@+id/textView4"
@@ -45,8 +32,7 @@
             android:id="@+id/services"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="10dp"
-            android:background="@drawable/border">
+            android:layout_margin="10dp">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/currentEvents"

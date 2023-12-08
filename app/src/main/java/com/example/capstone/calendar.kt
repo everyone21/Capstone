@@ -2,6 +2,7 @@ package com.example.capstone
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.icu.text.SimpleDateFormat
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -20,6 +21,8 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.FirebaseFirestoreException
 import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.QuerySnapshot
+import java.util.Calendar
+import java.util.Date
 
 class calendar : Fragment() {
 
@@ -45,6 +48,7 @@ class calendar : Fragment() {
 
 
         EventChangeListener()
+        updateEvent()
 
         return view
     }
@@ -91,6 +95,34 @@ class calendar : Fragment() {
 
                 })
 
+    }
+
+    @SuppressLint("SimpleDateFormat")
+    private fun updateEvent() {
+        val db = FirebaseFirestore.getInstance()
+        val events = db.collection("EventsAnnouncement")
+
+        val formatter = SimpleDateFormat("MM/dd/yyyy")
+        val format = formatter.format(Date())
+
+
+        // Delete the report
+        events.whereGreaterThan("eventDate", format.toString())
+            .get()
+            .addOnSuccessListener { querySnapshot ->
+                for (document in querySnapshot) {
+                    val eventId = document.id
+                    events.document(eventId).delete()
+                        .addOnSuccessListener {
+                        }
+                        .addOnFailureListener { e ->
+                            // Handle the error
+                        }
+                }
+            }
+            .addOnFailureListener { e ->
+                // Handle the error
+            }
     }
 
 

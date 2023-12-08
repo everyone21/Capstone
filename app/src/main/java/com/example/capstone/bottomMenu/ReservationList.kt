@@ -9,6 +9,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.capstone.R
 import android.content.Intent
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.example.capstone.Home
 import com.example.capstone.List.UserAppointmentData
 import com.example.capstone.Reservation.UserAppointmentListAdapter
@@ -16,7 +20,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.QuerySnapshot
 
-class ReservationList : AppCompatActivity() {
+class ReservationList : Fragment() {
     private lateinit var appointmentList: RecyclerView
     private lateinit var appointBtn: Button
     private lateinit var backBtn: ImageButton
@@ -25,33 +29,35 @@ class ReservationList : AppCompatActivity() {
     private val appointments = mutableListOf<UserAppointmentData>()
 
     @SuppressLint("MissingInflatedId")
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_reservation_list)
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        // Inflate the layout for this fragment
+        val view =  inflater.inflate(R.layout.activity_reservation_list, container, false)
 
         fStore = FirebaseFirestore.getInstance()
 
-        backBtn = findViewById(R.id.back)
-        backBtn.setOnClickListener {
-            finish()
-        }
 
-        appointBtn = findViewById(R.id.AppointBtn)
+        appointBtn = view.findViewById(R.id.AppointBtn)
         appointBtn.setOnClickListener {
-            val intent = Intent(this, Reservation::class.java)
+            val intent = Intent(context, Reservation::class.java)
             startActivity(intent)
         }
 
         // Initialize RecyclerView and adapter
-        appointmentList = findViewById(R.id.AppointmentList)
+        appointmentList = view.findViewById(R.id.AppointmentList)
         adapter = UserAppointmentListAdapter(appointments)
-        appointmentList.layoutManager = LinearLayoutManager(this)
+        appointmentList.layoutManager = LinearLayoutManager(context)
         appointmentList.adapter = adapter
 
         // Fetch user appointments and update the RecyclerView
         fetchUserAppointments()
+
+        return view
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     private fun fetchUserAppointments() {
         val currentUser = FirebaseAuth.getInstance().currentUser
         if (currentUser != null) {

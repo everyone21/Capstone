@@ -73,6 +73,7 @@
         <item>Proof of Residency</item>
         <item>Certification of Indigency</item>
         <item>Certification of Good Moral</item>
+        <item>Others</item>
     </string-array>
 
     <string-array name="Puroks">

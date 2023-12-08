@@ -1,7 +1,9 @@
 package com.example.capstone
 
+import android.annotation.SuppressLint
 import android.content.ContentValues.TAG
 import android.content.Intent
+import android.icu.text.SimpleDateFormat
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -18,6 +20,9 @@ import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
+import java.util.Calendar
+import java.util.Date
+import java.util.Locale
 
 class LoginPage : AppCompatActivity() {
 
@@ -29,6 +34,7 @@ class LoginPage : AppCompatActivity() {
     companion object {
         const val ADMIN_EMAIL = "admin@email.com"
     }
+    @SuppressLint("SimpleDateFormat")
     override fun onCreate(savedInstanceState: Bundle?) {
 
         fAuth = Firebase.auth

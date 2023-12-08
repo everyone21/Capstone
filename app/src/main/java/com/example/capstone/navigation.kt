@@ -8,6 +8,7 @@ import androidx.appcompat.widget.PopupMenu
 import android.view.MenuInflater
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.example.capstone.Reservation.AdminReservationViewItems
 import com.example.capstone.bottomMenu.LocalShopFragment
 import com.example.capstone.Reservation.adminReservationView
 import com.example.capstone.bottomMenu.ReservationList
@@ -56,19 +57,11 @@ class navigation : AppCompatActivity() {
             when(it.itemId){
                 R.id.home -> replace(dashboard())
                 R.id.calendar -> replace(calendar())
-//                R.id.admincalendar -> {val launch = Intent(this, AdminCalendarUpdate::class.java)
-//                    startActivity(launch)}
                 R.id.admincalendar -> replace(AdminCalendarView())
                 R.id.upload -> replace(Home())
-//                {val launch = Intent(this, UserReport::class.java)
-//                    startActivity(launch)}
                 R.id.navigation_read_report -> replace(AdminCheck())
-//                R.id.menu -> replace(bottomMenuBurger())
-                R.id.userappointments ->  {val launch = Intent(this, ReservationList::class.java)
-                    startActivity(launch)}
-                R.id.appointments -> {val launch = Intent(this, adminReservationView::class.java)
-                    startActivity(launch)}
-//                R.id.message -> replace(user_send_message())
+                R.id.userappointments -> replace(ReservationList())
+                R.id.appointments -> replace(adminReservationView())
                 R.id.profile -> replace(Profile())
 
                 else ->{

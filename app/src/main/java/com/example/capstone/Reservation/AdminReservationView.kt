@@ -5,12 +5,17 @@ import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.FrameLayout
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import com.example.capstone.R
 import com.example.capstone.Reservation.AdminReservationViewItems
 import com.example.capstone.navigation
@@ -19,7 +24,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import java.text.SimpleDateFormat
 import java.util.*
 
-class adminReservationView : AppCompatActivity() {
+class adminReservationView : Fragment() {
 
     private lateinit var currentDate: Date
     private lateinit var dateDisplay: TextView
@@ -27,11 +32,14 @@ class adminReservationView : AppCompatActivity() {
     private val INVALID_TIME_ID = -1
 
     @SuppressLint("MissingInflatedId")
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_admin_reservation_view)
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        // Inflate the layout for this fragment
+        val view =  inflater.inflate(R.layout.activity_admin_reservation_view, container, false)
 
-        dateDisplay = findViewById(R.id.dateDisplay)
+        dateDisplay = view.findViewById(R.id.dateDisplay)
         appointmentsRef = FirebaseFirestore.getInstance().collection("Appointments")
 
         // Initialize with the current date
@@ -39,9 +47,9 @@ class adminReservationView : AppCompatActivity() {
         displayDate(currentDate)
         updateAppointmentLimits()
 
-        val previousBtn = findViewById<ImageView>(R.id.previousBtn)
-        val nextBtn = findViewById<ImageView>(R.id.nextBtn)
-        val back = findViewById<ImageButton>(R.id.back)
+        val previousBtn = view.findViewById<ImageView>(R.id.previousBtn)
+        val nextBtn = view.findViewById<ImageView>(R.id.nextBtn)
+
 
         previousBtn.setOnClickListener {
             currentDate = getPreviousDate(currentDate)
@@ -55,18 +63,14 @@ class adminReservationView : AppCompatActivity() {
             updateAppointmentLimits()
         }
 
-        back.setOnClickListener {
-            val intent = Intent(this, navigation::class.java)
-            startActivity(intent)
-        }
 
-        val limit1 = findViewById<LinearLayout>(R.id.timeDisplay1)
-        val limit2 = findViewById<LinearLayout>(R.id.timeDisplay2)
-        val limit3 = findViewById<LinearLayout>(R.id.timeDisplay3)
-        val limit4 = findViewById<LinearLayout>(R.id.timeDisplay4)
-        val limit5 = findViewById<LinearLayout>(R.id.timeDisplay5)
-        val limit6 = findViewById<LinearLayout>(R.id.timeDisplay6)
-        val limit7 = findViewById<LinearLayout>(R.id.timeDisplay7)
+        val limit1 = view.findViewById<LinearLayout>(R.id.timeDisplay1)
+        val limit2 = view.findViewById<LinearLayout>(R.id.timeDisplay2)
+        val limit3 = view.findViewById<LinearLayout>(R.id.timeDisplay3)
+        val limit4 = view.findViewById<LinearLayout>(R.id.timeDisplay4)
+        val limit5 = view.findViewById<LinearLayout>(R.id.timeDisplay5)
+        val limit6 = view.findViewById<LinearLayout>(R.id.timeDisplay6)
+        val limit7 = view.findViewById<LinearLayout>(R.id.timeDisplay7)
 
         limit1.setOnClickListener {
             navigateToAdminReservationViewItems("09:00 AM")
@@ -89,6 +93,8 @@ class adminReservationView : AppCompatActivity() {
         limit7.setOnClickListener {
             navigateToAdminReservationViewItems("04:00 PM")
         }
+
+        return view
     }
 
     private fun getPreviousDate(currentDate: Date): Date {
@@ -182,7 +188,7 @@ class adminReservationView : AppCompatActivity() {
     }
 
     private fun updateLimitText(limitId: Int, count: Long) {
-        val limitTextView = findViewById<TextView>(limitId)
+        val limitTextView = view?.findViewById<TextView>(limitId)
 
         Log.d("AppointmentUpdate", "Updating limit text - ID: $limitId, Count: $count")
 
@@ -213,7 +219,7 @@ class adminReservationView : AppCompatActivity() {
     }
 
     private fun navigateToAdminReservationViewItems(selectedTime: String) {
-        val intent = Intent(this, AdminReservationViewItems::class.java)
+        val intent = Intent(context, AdminReservationViewItems::class.java)
         val dateFormat = SimpleDateFormat("MMMM dd, yyyy", Locale.getDefault())
         val currentDateFormatted = dateFormat.format(currentDate)
 

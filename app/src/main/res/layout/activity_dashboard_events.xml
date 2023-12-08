@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Dashboard.dashboardEvents"
-    android:background="#4FA553"
     android:orientation="vertical">
 
 
@@ -17,6 +16,13 @@
         android:textSize="15sp"
         android:textColor="#FF0000"
         android:background="#00FFFFFF"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:scaleType="centerCrop"
+        android:layout_margin="5dp"
+        android:src="@drawable/announcement1"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -38,7 +44,7 @@
             android:fontFamily="@font/audiowide"
             android:text="What"
             android:textColor="@color/black"
-            android:textSize="30dp" />
+            android:textSize="25dp" />
 
         <TextView
             android:id="@+id/where"
