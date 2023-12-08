@@ -48,7 +48,7 @@ class calendar : Fragment() {
 
 
         EventChangeListener()
-        updateEvent()
+//        updateEvent()
 
         return view
     }
@@ -56,7 +56,7 @@ class calendar : Fragment() {
     private fun EventChangeListener(){
 
         db = FirebaseFirestore.getInstance()
-        db.collection("EventsAnnouncement").orderBy("eventDate", Query.Direction.DESCENDING)
+        db.collection("EventsAnnouncement").orderBy("eventDate", Query.Direction.ASCENDING)
             .addSnapshotListener(object : EventListener<QuerySnapshot>{
                     @SuppressLint("NotifyDataSetChanged")
                     override fun onEvent(
@@ -97,33 +97,33 @@ class calendar : Fragment() {
 
     }
 
-    @SuppressLint("SimpleDateFormat")
-    private fun updateEvent() {
-        val db = FirebaseFirestore.getInstance()
-        val events = db.collection("EventsAnnouncement")
-
-        val formatter = SimpleDateFormat("MM/dd/yyyy")
-        val format = formatter.format(Date())
-
-
-        // Delete the report
-        events.whereGreaterThan("eventDate", format.toString())
-            .get()
-            .addOnSuccessListener { querySnapshot ->
-                for (document in querySnapshot) {
-                    val eventId = document.id
-                    events.document(eventId).delete()
-                        .addOnSuccessListener {
-                        }
-                        .addOnFailureListener { e ->
-                            // Handle the error
-                        }
-                }
-            }
-            .addOnFailureListener { e ->
-                // Handle the error
-            }
-    }
+//    @SuppressLint("SimpleDateFormat")
+//    private fun updateEvent() {
+//        val db = FirebaseFirestore.getInstance()
+//        val events = db.collection("EventsAnnouncement")
+//
+//        val formatter = SimpleDateFormat("MM/dd/yyyy")
+//        val format = formatter.format(Date())
+//
+//
+//        // Delete the report
+//        events.whereGreaterThan("eventDate", format.toString())
+//            .get()
+//            .addOnSuccessListener { querySnapshot ->
+//                for (document in querySnapshot) {
+//                    val eventId = document.id
+//                    events.document(eventId).delete()
+//                        .addOnSuccessListener {
+//                        }
+//                        .addOnFailureListener { e ->
+//                            // Handle the error
+//                        }
+//                }
+//            }
+//            .addOnFailureListener { e ->
+//                // Handle the error
+//            }
+//    }
 
 
 }

@@ -1,6 +1,5 @@
 package com.example.capstone
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -8,8 +7,6 @@ import androidx.appcompat.widget.PopupMenu
 import android.view.MenuInflater
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.example.capstone.Reservation.AdminReservationViewItems
-import com.example.capstone.bottomMenu.LocalShopFragment
 import com.example.capstone.Reservation.adminReservationView
 import com.example.capstone.bottomMenu.ReservationList
 import com.example.capstone.databinding.ActivityMainBinding
@@ -80,13 +77,6 @@ class navigation : AppCompatActivity() {
 
         popup.setOnMenuItemClickListener { item ->
             when (item.itemId) {
-                // Handle each item click as needed
-                R.id.local_shop -> {
-//                    val intent1 = Intent(this, LocalShop::class.java)
-//                    startActivity(intent1)
-                    replace(LocalShopFragment())
-                    true
-                }
                 R.id.message -> {
                     replace(user_send_message())
                     true

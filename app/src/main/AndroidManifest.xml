@@ -16,6 +16,15 @@
         android:theme="@style/Theme.Capstone"
         tools:targetApi="31">
         <activity
+            android:name=".LocalShops.ServicePost"
+            android:exported="false" />
+        <activity
+            android:name=".LocalShops.MarketPost"
+            android:exported="false" />
+        <activity
+            android:name=".LocalShops.FoodnBevPost"
+            android:exported="false" />
+        <activity
             android:name=".Dashboard.dashboardEvents"
             android:exported="false" />
         <activity

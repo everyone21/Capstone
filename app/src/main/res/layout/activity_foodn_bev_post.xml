@@ -4,8 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".bottomMenu.PostShop">
+    tools:context=".LocalShops.FoodnBevPost">
 
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:fontFamily="@font/audiowide"
+        android:text="Foods and Beverage Business Posting"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:id="@+id/linearLayout9"
@@ -15,7 +28,7 @@
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/textView10">
 
         <TextView
             android:layout_width="wrap_content"
@@ -69,39 +82,6 @@
             android:lines="5"
             android:paddingStart="10dp"
             tools:ignore="RtlSymmetry" />
-
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
-            android:layout_marginEnd="50dp"
-            android:background="@drawable/border_black">
-
-            <Spinner
-                android:id="@+id/type"
-                android:layout_width="match_parent"
-                android:layout_height="70dp" />
-
-        </FrameLayout>
-
-        <FrameLayout
-            android:id="@+id/others"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
-            android:layout_marginEnd="50dp"
-            android:background="@drawable/border_black"
-            android:visibility="visible"
-            android:layout_marginTop="5dp">
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:hint="Others"
-                android:textColor="@color/black"
-                android:textSize="18sp" />
-        </FrameLayout>
     </LinearLayout>
 
     <LinearLayout
@@ -123,6 +103,19 @@
             android:textColor="@color/black"
             android:textSize="22sp" />
 
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:background="@drawable/border_black">
+
+            <Spinner
+                android:id="@+id/type"
+                android:layout_width="match_parent"
+                android:layout_height="55dp" />
+        </FrameLayout>
+
         <EditText
             android:id="@+id/shopLocation"
             android:layout_width="match_parent"
@@ -133,6 +126,7 @@
             android:ems="10"
             android:gravity="center"
             android:inputType="text" />
+
     </LinearLayout>
 
     <Button
@@ -148,4 +142,5 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout11" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

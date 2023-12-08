@@ -92,7 +92,7 @@ class dashboard : Fragment() {
 
 
         db = FirebaseFirestore.getInstance()
-        db.collection("EventsAnnouncement").orderBy("eventDate", Query.Direction.DESCENDING)
+        db.collection("EventsAnnouncement").orderBy("eventDate", Query.Direction.ASCENDING)
             .addSnapshotListener(object : EventListener<QuerySnapshot> {
                 @SuppressLint("NotifyDataSetChanged")
                 override fun onEvent(
